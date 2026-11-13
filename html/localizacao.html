@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Consulte unidades de saúde, endereços, horários e localização.">
+  <title>Localização das unidades — Saúde para Todos</title>
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/localizacao.css">
+</head>
+
+<body>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html"><span class="brand-icon" aria-hidden="true">+</span><span>Saúde para
+          Todos</span></a>
+      <nav class="main-nav" aria-label="Navegação principal">
+        <ul>
+          <li><a href="plataforma.html">Início</a></li>
+          <li><a href="localizacao.html" aria-current="page">Unidades</a></li>
+          <li><a href="atendimento.html">Agendamentos</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions"><a class="btn btn--outline" href="login.html">Entrar</a><a class="btn btn--primary"
+          href="cadastro.html">Criar conta</a></div>
+    </div>
+  </header>
+
+  <main id="conteudo" class="location-main">
+    <section class="container page-intro">
+      <span class="eyebrow">Encontre sua unidade</span>
+      <h1>Localização e unidades de saúde</h1>
+      <p>Pesquise estabelecimentos e consulte informações importantes antes de sair de casa.</p>
+    </section>
+
+    <section class="location-layout" aria-label="Lista de unidades e mapa">
+      <aside class="location-sidebar">
+        <form class="filter-box" action="localizacao.html" method="get">
+          <label for="busca-unidade">Buscar unidade</label>
+          <input id="busca-unidade" type="search" name="q" placeholder="Nome, bairro ou região">
+          <div class="filter-row">
+            <div><label for="filtro-tipo">Tipo</label><select id="filtro-tipo" name="tipo">
+                <option value="">Todos</option>
+                <option>UBS</option>
+                <option>PSF</option>
+                <option>Hospital público</option>
+                <option>Hospital privado</option>
+              </select></div>
+            <div><label for="filtro-rede">Atendimento</label><select id="filtro-rede" name="rede">
+                <option value="">Todos</option>
+                <option>SUS</option>
+                <option>Planos</option>
+                <option>Particular</option>
+              </select></div>
+          </div>
+          <button class="btn btn--primary btn--block" type="submit">Aplicar filtros</button>
+        </form>
+
+        <div class="results-heading">
+          <h2>Unidades encontradas</h2><span>03 exemplos</span>
+        </div>
+        <article class="location-unit is-selected">
+          <span class="unit-type">UBS · SUS</span>
+          <h3>UBS Central</h3>
+          <p>Centro, João Pessoa – PB</p>
+          <p class="small-info">Seg. a sex. · 7h às 17h</p>
+          <a href="#detalhes-ubs" class="text-link">Ver detalhes <span aria-hidden="true">→</span></a>
+        </article>
+        <article class="location-unit">
+          <span class="unit-type">Hospital · SUS</span>
+          <h3>Hospital Municipal</h3>
+          <p>Bairro dos Estados, João Pessoa – PB</p>
+          <p class="small-info">Urgência · 24 horas</p>
+          <a href="#detalhes-hospital" class="text-link">Ver detalhes <span aria-hidden="true">→</span></a>
+        </article>
+        <article class="location-unit">
+          <span class="unit-type">Clínica · Planos</span>
+          <h3>Centro Médico Vida</h3>
+          <p>Manaíra, João Pessoa – PB</p>
+          <p class="small-info">Seg. a sáb. · 8h às 18h</p>
+          <a href="#detalhes-clinica" class="text-link">Ver detalhes <span aria-hidden="true">→</span></a>
+        </article>
+        <p class="demo-note">Dados fictícios para demonstração do layout.</p>
+      </aside>
+
+      <div class="map-column">
+        <div class="map-toolbar">
+          <div><strong>Mapa de unidades</strong><span>Área demonstrativa</span></div><a class="text-link"
+            href="https://www.openstreetmap.org/" target="_blank" rel="noopener noreferrer">Abrir mapa externo ↗</a>
+        </div>
+        <div class="map-placeholder" role="img"
+          aria-label="Ilustração demonstrativa de mapa com três marcadores de unidades de saúde">
+          <div class="map-road road-one"></div>
+          <div class="map-road road-two"></div>
+          <div class="map-road road-three"></div>
+          <div class="map-water"></div>
+          <div class="map-park"></div>
+          <span class="map-label label-a">CENTRO</span><span class="map-label label-b">BAIRRO DOS ESTADOS</span><span
+            class="map-label label-c">MANAÍRA</span>
+          <a class="map-pin pin-a" href="#detalhes-ubs" aria-label="Ver UBS Central">+</a>
+          <a class="map-pin pin-b" href="#detalhes-hospital" aria-label="Ver Hospital Municipal">+</a>
+          <a class="map-pin pin-c" href="#detalhes-clinica" aria-label="Ver Centro Médico Vida">+</a>
+          <span class="map-legend"><i></i> Unidade de saúde</span>
+        </div>
+        <p class="map-caption">Este mapa é uma representação visual ilustrativa. Os marcadores não correspondem a
+          coordenadas reais.</p>
+
+        <section class="unit-detail" id="detalhes-ubs">
+          <div class="detail-heading">
+            <div><span class="eyebrow">Unidade selecionada</span>
+              <h2>UBS Central</h2>
+              <p>Centro, João Pessoa – PB</p>
+            </div><span class="detail-badge">SUS</span>
+          </div>
+          <div class="detail-grid">
+            <div>
+              <h3>Horário de funcionamento</h3>
+              <dl class="hours-list">
+                <div>
+                  <dt>Segunda a sexta</dt>
+                  <dd>7h – 17h</dd>
+                </div>
+                <div>
+                  <dt>Sábado e domingo</dt>
+                  <dd>Fechado</dd>
+                </div>
+                <div>
+                  <dt>Feriados</dt>
+                  <dd>Consultar unidade</dd>
+                </div>
+              </dl>
+            </div>
+            <div>
+              <h3>Especialidades e serviços</h3>
+              <div class="tag-list"><span>Clínica
+                  geral</span><span>Enfermagem</span><span>Vacinação</span><span>Pré-natal</span></div>
+              <p class="availability-note">Disponibilidade de profissionais: consulte diretamente a unidade.</p>
+            </div>
+          </div>
+          <div class="detail-actions"><a class="btn btn--outline"
+              href="https://www.openstreetmap.org/search?query=Centro%2C%20Jo%C3%A3o%20Pessoa" target="_blank"
+              rel="noopener noreferrer">Consultar rota</a><a class="btn btn--primary" href="atendimento.html">Agendar
+              atendimento</a></div>
+        </section>
+        <section class="unit-detail compact-detail" id="detalhes-hospital">
+          <h2>Hospital Municipal</h2>
+          <p>Endereço e disponibilidade devem ser confirmados com a unidade. Urgência informada no exemplo: 24 horas.
+          </p>
+        </section>
+        <section class="unit-detail compact-detail" id="detalhes-clinica">
+          <h2>Centro Médico Vida</h2>
+          <p>Exemplo de clínica privada. Consulte a clínica para confirmar convênios, especialidades e horários.</p>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer site-footer--mini">
+    <div class="container footer-bottom">
+      <nav class="mini-links" aria-label="Links do rodapé"><a href="privacidade.html">Privacidade</a><a
+          href="termos.html">Termos de uso</a><a href="contato.html">Contato</a></nav>
+      <p>© 2026 Saúde para Todos.</p>
+    </div>
+  </footer>
+</body>
+
+</html>

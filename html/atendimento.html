@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Solicite um agendamento e acompanhe as informações do seu atendimento.">
+  <title>Agendar atendimento — Saúde para Todos</title>
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/atendimento.css">
+</head>
+
+<body>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html"><span class="brand-icon" aria-hidden="true">+</span><span>Saúde para
+          Todos</span></a>
+      <nav class="main-nav" aria-label="Navegação principal">
+        <ul>
+          <li><a href="plataforma.html">Início</a></li>
+          <li><a href="localizacao.html">Unidades</a></li>
+          <li><a href="atendimento.html" aria-current="page">Agendamentos</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions"><a class="btn btn--outline" href="login.html">Entrar</a><a class="btn btn--primary"
+          href="cadastro.html">Criar conta</a></div>
+    </div>
+  </header>
+
+  <main id="conteudo" class="appointment-main">
+    <section class="container page-intro">
+      <span class="eyebrow">Agendamento de consulta</span>
+      <h1>Organize seu próximo atendimento</h1>
+      <p>Preencha os dados abaixo para solicitar um horário na unidade escolhida.</p>
+    </section>
+
+    <div class="container appointment-layout">
+      <section class="appointment-panel" aria-labelledby="form-title">
+        <div class="panel-heading"><span class="panel-icon" aria-hidden="true">+</span>
+          <div>
+            <h2 id="form-title">Solicitar agendamento</h2>
+            <p>Campos marcados com * são obrigatórios.</p>
+          </div>
+        </div>
+        <form class="appointment-form" action="#" method="get">
+          <div class="field">
+            <label for="unidade">Unidade de saúde *</label>
+            <select id="unidade" name="unidade" required>
+              <option value="">Selecione uma unidade</option>
+              <option value="ubs-central">UBS Central (exemplo)</option>
+              <option value="hospital-municipal">Hospital Municipal (exemplo)</option>
+              <option value="centro-medico">Centro Médico Vida (exemplo)</option>
+            </select>
+          </div>
+          <fieldset class="field fieldset">
+            <legend>Forma de atendimento *</legend>
+            <div class="choice-grid">
+              <label class="choice-card"><input type="radio" name="forma" value="sus"
+                  required><span><strong>SUS</strong><small>Atendimento público</small></span></label>
+              <label class="choice-card"><input type="radio" name="forma" value="convenio"><span><strong>Plano de
+                    saúde</strong><small>Informe seu convênio à unidade</small></span></label>
+              <label class="choice-card"><input type="radio" name="forma"
+                  value="particular"><span><strong>Particular</strong><small>Pagamento direto</small></span></label>
+            </div>
+          </fieldset>
+          <div class="field">
+            <label for="especialidade">Especialidade *</label>
+            <select id="especialidade" name="especialidade" required>
+              <option value="">Selecione uma especialidade</option>
+              <option>Clínica geral</option>
+              <option>Cardiologia</option>
+              <option>Dermatologia</option>
+              <option>Ortopedia</option>
+              <option>Pediatria</option>
+              <option>Ginecologia</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="data">Data desejada *</label>
+            <input id="data" type="date" name="data" required>
+            <small>As datas disponíveis dependem da confirmação da unidade.</small>
+          </div>
+          <fieldset class="field fieldset">
+            <legend>Horário desejado *</legend>
+            <p class="field-help">Escolha uma opção de preferência. A seleção não confirma a disponibilidade.</p>
+            <div class="time-grid">
+              <label class="time-option"><input type="radio" name="horario" value="08:00"
+                  required><span>08:00</span></label>
+              <label class="time-option"><input type="radio" name="horario" value="09:00"><span>09:00</span></label>
+              <label class="time-option"><input type="radio" name="horario" value="10:00"><span>10:00</span></label>
+              <label class="time-option"><input type="radio" name="horario" value="13:00"><span>13:00</span></label>
+              <label class="time-option"><input type="radio" name="horario" value="14:00"><span>14:00</span></label>
+              <label class="time-option"><input type="radio" name="horario" value="15:00"><span>15:00</span></label>
+            </div>
+          </fieldset>
+          <div class="field">
+            <label for="observacoes">Observações (opcional)</label>
+            <textarea id="observacoes" name="observacoes" rows="3"
+              placeholder="Adicione informações relevantes para a solicitação"></textarea>
+          </div>
+          <button class="btn btn--primary btn--block" type="submit">Enviar solicitação</button>
+          <p class="form-disclaimer">Protótipo demonstrativo: o formulário valida os campos no navegador, mas não envia
+            nem salva o agendamento sem integração com um servidor.</p>
+        </form>
+      </section>
+
+      <aside class="my-appointment" aria-labelledby="local-title">
+        <div class="my-appointment-heading"><span class="eyebrow">Área do paciente</span>
+          <h2 id="local-title">Meu Local de Atendimento</h2>
+          <p>Acompanhe os dados do atendimento após a confirmação da unidade.</p>
+        </div>
+        <div class="appointment-status"><span class="status-dot"></span>
+          <div><small>Status do agendamento</small><strong>Aguardando solicitação</strong></div>
+        </div>
+        <div class="appointment-summary">
+          <div class="summary-row"><span>Unidade</span><strong>Não selecionada</strong></div>
+          <div class="summary-row"><span>Data e horário</span><strong>Não definidos</strong></div>
+          <div class="summary-row"><span>Sala / consultório</span><strong>A confirmar</strong></div>
+          <div class="summary-row"><span>Profissional</span><strong>A confirmar</strong></div>
+        </div>
+        <div class="location-mini">
+          <div class="mini-map" aria-hidden="true"><span class="mini-map-pin">+</span></div>
+          <div><strong>Localização da unidade</strong>
+            <p>Será exibida após a confirmação do agendamento.</p><a href="localizacao.html" class="text-link">Consultar
+              unidades →</a>
+          </div>
+        </div>
+        <p class="notice">Importante: somente considere o atendimento confirmado após receber a confirmação oficial da
+          unidade de saúde.</p>
+      </aside>
+    </div>
+  </main>
+  <footer class="site-footer site-footer--mini">
+    <div class="container footer-bottom">
+      <nav class="mini-links" aria-label="Links do rodapé"><a href="privacidade.html">Privacidade</a><a
+          href="termos.html">Termos de uso</a><a href="contato.html">Contato</a></nav>
+      <p>© 2026 Saúde para Todos.</p>
+    </div>
+  </footer>
+</body>
+
+</html>
