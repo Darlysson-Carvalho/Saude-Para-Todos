@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#2b8bd8">
+  <title>Criar cadastro — Saúde para Todos</title>
+
+  <!-- Fonte moderna (opcional: sem ela o navegador usa uma fonte do sistema) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- CSS compartilhado + CSS exclusivo desta página -->
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/cadastro.css">
+</head>
+<body>
+
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo principal</a>
+
+  <!-- ==================== CABEÇALHO ==================== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="Saúde para Todos — página inicial">
+        <span class="brand-icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1.1L12 21l7.8-7.5 1-1.1a5.5 5.5 0 0 0 0-7.8z"/><path d="M3.5 12h4l1.5-2.5 2.5 5 1.5-2.5h7"/></svg></span>
+        <span>Saúde para Todos</span>
+      </a>
+      <div class="header-actions">
+        <a class="btn btn--outline" href="index.html">&larr; Início</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==================== CONTEÚDO ==================== -->
+  <main id="conteudo" class="page-main">
+    <div class="container">
+      <section class="panel">
+        <div class="panel-icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><circle cx="9" cy="8" r="4"/><path d="M2 21v-1a6 6 0 0 1 6-6h2"/><path d="M18 14v6M15 17h6"/></svg></div>
+        <h1>Criar cadastro</h1>
+        <p class="panel-sub">Preencha os dados abaixo para criar sua conta.</p>
+
+        <form class="form" action="plataforma.html" method="get">
+          <div class="field">
+            <label for="nome">Nome completo</label>
+            <input id="nome" name="nome" type="text" autocomplete="name" required>
+          </div>
+          <div class="field">
+            <label for="email">E-mail</label>
+            <input id="email" name="email" type="email" autocomplete="email" placeholder="Ex: paciente@exemplo.com" required>
+          </div>
+          <div class="field">
+            <label for="cpf">CPF</label>
+            <input id="cpf" name="cpf" type="text" autocomplete="off" placeholder="Ex: 123.456.789-00" required>
+          </div>
+          <div class="field">
+            <label for="senha">Senha</label>
+            <input id="senha" type="password" autocomplete="new-password" minlength="8" required>
+          </div>
+          <button class="btn btn--primary btn--block" type="submit">Criar conta</button>
+        </form>
+
+        <p class="panel-links">Já tem conta? <a href="login.html">Fazer login</a></p>
+        <p class="panel-links"><a href="index.html">&larr; Voltar ao início</a></p>
+      </section>
+    </div>
+  </main>
+
+  <!-- ==================== RODAPÉ ==================== -->
+  <footer class="site-footer site-footer--mini">
+    <div class="container footer-bottom">
+      <nav aria-label="Links do rodapé">
+        <ul class="mini-links">
+          <li><a href="privacidade.html">Política de privacidade</a></li>
+          <li><a href="termos.html">Termos de uso</a></li>
+          <li><a href="contato.html">Contato</a></li>
+        </ul>
+      </nav>
+      <p>&copy; 2026 Saúde para Todos — Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

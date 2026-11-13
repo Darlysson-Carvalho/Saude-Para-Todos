@@ -1,0 +1,17 @@
+/* =========================================================
+   profissional.css — escolha de acesso do profissional
+   Usado por: profissional.html
+   ========================================================= */
+
+
+/* Painel mais largo (página do profissional) e título da pergunta */
+.panel--wide { max-width: 560px; }
+.panel .options-list { max-width: none; margin-top: 4px; }
+.gateway-q {
+  margin-bottom: 14px;
+  font-size: 1.05rem;
+  font-weight: 800;
+  text-align: center;
+}
+
+

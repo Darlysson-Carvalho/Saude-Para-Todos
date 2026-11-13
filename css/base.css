@@ -1,0 +1,449 @@
+/* =========================================================
+   base.css — estilos compartilhados por TODAS as páginas
+   Usado por: todas as páginas (carregue sempre antes do CSS da página)
+   Índice: 1 Variáveis · 2 Reset · 3 Acessibilidade · 4 Botões · 5 Cabeçalho ·
+           6 Cards de acesso · 7 Painel e formulários · 8 Rodapé · 9 Animações · 10 Responsivo
+   ========================================================= */
+
+
+/* ---------- 1. VARIÁVEIS ---------- */
+:root {
+  /* Azuis */
+  --blue-50:  #f3f9ff;
+  --blue-100: #e2f0fe;
+  --blue-200: #c5e1fb;
+  --blue-300: #94c8f6;
+  --blue-500: #2b8bd8;   /* cor principal */
+  --blue-600: #1b73bf;   /* hover */
+  --blue-700: #165d9a;
+  --blue-900: #0e3a5f;   /* títulos */
+  --navy:     #0a2b47;   /* rodapé */
+
+  /* Apoio (toque de verde-água, transmite saúde) */
+  --teal-500: #19b6a6;
+  --teal-100: #dcf7f2;
+
+  /* Neutros */
+  --white:    #ffffff;
+  --ink:      #0e3a5f;
+  --muted:    #4f6b84;
+  --line:     #e3edf6;
+
+  /* Gradientes */
+  --grad-primary: linear-gradient(135deg, rgb(43, 139, 216) 0%, #19b6a6 100%);
+  --grad-text:    linear-gradient(120deg, #1b73bf 0%, #19b6a6 100%);
+
+  /* Medidas */
+  --radius-lg: 24px;
+  --radius:    18px;
+  --radius-sm: 12px;
+  --max-width: 1120px;
+
+  /* Sombras suaves */
+  --shadow-sm: 0 2px 10px rgba(14, 58, 95, 0.06);
+  --shadow-md: 0 12px 30px rgba(27, 115, 191, 0.14);
+  --shadow-lg: 0 30px 60px rgba(14, 58, 95, 0.18);
+
+  /* Tipografia */
+  --font: "Plus Jakarta Sans", "Segoe UI", system-ui, -apple-system,
+          "Helvetica Neue", Roboto, Arial, sans-serif;
+}
+
+
+/* ---------- 2. RESET E BASE ---------- */
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;   /* compensa o cabeçalho fixo nas âncoras */
+  background: var(--white);
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font);
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Fundo decorativo com manchas de cor suaves */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(600px 400px at 85% 5%,  rgba(43, 139, 216, 0.16), transparent 70%),
+    radial-gradient(500px 380px at 5% 30%,  rgba(25, 182, 166, 0.12), transparent 70%),
+    radial-gradient(700px 500px at 60% 95%, rgba(148, 200, 246, 0.18), transparent 70%);
+}
+
+h1, h2, h3, p, ul, ol, figure { margin: 0; }
+ul, ol { padding: 0; list-style: none; }
+a { color: inherit; text-decoration: none; }
+svg { display: block; }
+
+/* Tema do profissional: fundo verde-água no lugar do azul */
+body.tema-pro { background: rgb(43, 139, 216); }
+body.tema-pro::before {
+  background:
+    radial-gradient(600px 400px at 85% 5%,  rgba(43, 132, 204, 0.22), transparent 70%),
+    radial-gradient(500px 380px at 5% 30%,  rgba(43, 139, 216, 0.10), transparent 70%),
+    radial-gradient(700px 500px at 60% 95%, rgba(28, 96, 151, 0.16), transparent 70%);
+}
+
+/* ---------- 3. ACESSIBILIDADE E UTILITÁRIOS ---------- */
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin-inline: auto;
+  padding-inline: 24px;
+}
+
+.skip-link {
+  position: absolute;
+  left: 12px;
+  top: -60px;
+  z-index: 100;
+  padding: 10px 16px;
+  color: var(--white);
+  background: var(--blue-900);
+  border-radius: 8px;
+  transition: top 0.2s ease;
+}
+.skip-link:focus { top: 12px; }
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+summary:focus-visible {
+  outline: 3px solid var(--blue-500);
+  outline-offset: 3px;
+  border-radius: 8px;
+}
+
+.icon { width: 100%; height: 100%; fill: none; stroke: currentColor;
+        stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+
+
+/* ---------- 4. BOTÕES ---------- */
+.btn {
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 22px;
+  font: inherit;
+  font-weight: 700;
+  font-size: 0.95rem;
+  line-height: 1;
+  border: 2px solid transparent;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease,
+              background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+.btn:hover { transform: translateY(-2px); }
+
+.btn--primary {
+  color: var(--white);
+  background: var(--grad-primary);
+  box-shadow: 0 8px 18px rgba(43, 139, 216, 0.3);
+}
+.btn--primary:hover { box-shadow: 0 12px 26px rgba(43, 139, 216, 0.4); }
+
+.btn--outline {
+  color: var(--blue-600);
+  background: var(--white);
+  border-color: var(--blue-200);
+}
+.btn--outline:hover { border-color: var(--blue-500); background: var(--blue-50); }
+
+.btn--light {
+  color: var(--blue-700);
+  background: var(--white);
+}
+.btn--light:hover { box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18); }
+
+.btn--ghost-light {
+  color: var(--white);
+  border-color: rgba(255, 255, 255, 0.55);
+}
+.btn--ghost-light:hover { background: rgba(255, 255, 255, 0.14); border-color: var(--white); }
+
+.btn--block { width: 100%; padding-block: 15px; }
+
+
+/* ---------- 5. CABEÇALHO ---------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(255, 255, 255, 0.78);
+  backdrop-filter: saturate(160%) blur(14px);
+  -webkit-backdrop-filter: saturate(160%) blur(14px);
+  border-bottom: 1px solid var(--line);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  min-height: 72px;
+}
+
+.brand {
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 800;
+  font-size: 1.2rem;
+  letter-spacing: -0.01em;
+}
+
+.brand-icon {
+  width: 42px;
+  height: 42px;
+  padding: 9px;
+  color: var(--white);
+  background: var(--grad-primary);
+  border-radius: 14px;
+  box-shadow: 0 6px 14px rgba(43, 139, 216, 0.35);
+  transition: transform 0.25s ease;
+}
+.brand:hover .brand-icon { transform: rotate(-6deg) scale(1.06); }
+
+.main-nav ul { display: flex; gap: 6px; }
+.main-nav a {
+  display: block;
+  padding: 8px 14px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--muted);
+  border-radius: 999px;
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+.main-nav a:hover { color: var(--blue-700); background: var(--blue-100); }
+
+.header-actions { display: flex; align-items: center; gap: 10px; }
+
+
+/* ---------- 6. CARDS DE ACESSO (index e profissional) ---------- */
+/* Cards de acesso */
+.options-list { display: grid; gap: 12px; max-width: 520px; }
+
+.card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 18px;
+  background: var(--white);
+  border: 1.5px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.25s ease, box-shadow 0.25s ease,
+              border-color 0.25s ease, background-color 0.25s ease;
+}
+.card:hover,
+.card:focus-visible {
+  transform: translateY(-3px) translateX(2px);
+  border-color: var(--blue-500);
+  box-shadow: var(--shadow-md);
+}
+.card:active { transform: translateY(-1px); }
+
+.card--highlight {
+  background: linear-gradient(135deg, var(--blue-100), var(--teal-100));
+  border-color: var(--blue-200);
+}
+
+.card-icon {
+  flex: none;
+  width: 50px;
+  height: 50px;
+  padding: 12px;
+  color: var(--blue-500);
+  background: var(--blue-100);
+  border-radius: 14px;
+  transition: background 0.25s ease, color 0.25s ease, transform 0.25s ease;
+}
+.card--highlight .card-icon { background: var(--white); }
+.card:hover .card-icon {
+  color: var(--white);
+  background: var(--grad-primary);
+  transform: scale(1.06) rotate(-4deg);
+}
+
+.card-body { flex: 1; display: flex; flex-direction: column; }
+.card-title { font-size: 1.05rem; font-weight: 800; }
+.card-desc  { font-size: 0.9rem; color: var(--muted); line-height: 1.4; }
+
+.card-arrow {
+  flex: none;
+  width: 34px;
+  height: 34px;
+  padding: 8px;
+  color: var(--blue-500);
+  background: var(--blue-50);
+  border-radius: 50%;
+  transition: transform 0.25s ease, background-color 0.25s ease, color 0.25s ease;
+}
+.card:hover .card-arrow {
+  color: var(--white);
+  background: var(--blue-500);
+  transform: translateX(4px);
+}
+
+
+/* ---------- 7. PAINEL E FORMULÁRIOS (páginas internas) ---------- */
+.page-main {
+  flex: 1;
+  display: grid;
+  place-items: center;
+  padding-block: 56px;
+}
+
+.panel {
+  width: 100%;
+  max-width: 480px;
+  margin-inline: auto;
+  padding: 40px 36px;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+}
+
+.panel-icon {
+  width: 60px;
+  height: 60px;
+  padding: 15px;
+  margin: 0 auto 18px;
+  color: var(--white);
+  background: var(--grad-primary);
+  border-radius: 18px;
+  box-shadow: 0 10px 20px rgba(43, 139, 216, 0.3);
+}
+
+.panel h1 {
+  margin-bottom: 8px;
+  font-size: 1.7rem;
+  font-weight: 800;
+  text-align: center;
+  letter-spacing: -0.02em;
+}
+.panel-sub {
+  margin-bottom: 26px;
+  text-align: center;
+  color: var(--muted);
+}
+
+.form { display: grid; gap: 18px; margin-bottom: 8px; }
+.field { display: grid; gap: 7px; }
+.field label { font-size: 0.9rem; font-weight: 700; }
+.field input {
+  width: 100%;
+  padding: 14px 16px;
+  font: inherit;
+  color: var(--ink);
+  background: var(--blue-50);
+  border: 1.5px solid var(--blue-200);
+  border-radius: var(--radius-sm);
+  transition: border-color 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+}
+.field input:hover { border-color: var(--blue-300); }
+.field input:focus {
+  background: var(--white);
+  border-color: var(--blue-500);
+  box-shadow: 0 0 0 4px rgba(43, 139, 216, 0.15);
+  outline: none;
+}
+
+.panel-links {
+  margin-top: 16px;
+  text-align: center;
+  font-size: 0.92rem;
+  color: var(--muted);
+}
+.panel-links a { font-weight: 700; color: var(--blue-600); }
+.panel-links a:hover { text-decoration: underline; }
+
+.panel-actions { display: flex; justify-content: center; margin-top: 8px; }
+
+
+/* ---------- 8. RODAPÉ ---------- */
+.site-footer {
+  margin-top: auto;
+  padding-top: 56px;
+  color: #b9d0e4;
+  background: var(--navy);
+}
+
+.footer-bottom {
+  padding-block: 20px;
+  font-size: 0.85rem;
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+/* Rodapé reduzido (páginas internas) */
+.site-footer--mini { padding-top: 0; }
+.site-footer--mini .footer-bottom { border-top: 0; padding-block: 28px; }
+.mini-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 22px; margin-bottom: 10px; }
+.mini-links a { transition: color 0.2s ease; }
+.mini-links a:hover { color: var(--white); }
+
+
+/* ---------- 9. ANIMAÇÕES COMPARTILHADAS (somente CSS) ---------- */
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.panel { animation: fade-up 0.7s ease both; }
+
+/* Listas de opções (cards) entram em sequência */
+.options-list li { animation: fade-up 0.7s ease both; }
+.options-list li:nth-child(1) { animation-delay: 0.45s; }
+.options-list li:nth-child(2) { animation-delay: 0.55s; }
+.options-list li:nth-child(3) { animation-delay: 0.65s; }
+.options-list li:nth-child(4) { animation-delay: 0.75s; }
+
+/* Respeita quem prefere menos movimento */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+
+/* ---------- 10. RESPONSIVIDADE COMPARTILHADA ---------- */
+@media (max-width: 600px) {
+  .container { padding-inline: 18px; }
+  .header-inner { min-height: 64px; }
+  .header-actions .btn--outline { display: none; }   /* mantém só "Criar conta" */
+  .brand { font-size: 1.05rem; gap: 10px; }
+  .header-actions .btn { padding: 11px 18px; }
+
+  .card { padding: 14px; gap: 12px; }
+  .card-icon { width: 44px; height: 44px; padding: 10px; }
+  .card-arrow { display: none; }
+
+  .panel { padding: 30px 22px; }
+}
