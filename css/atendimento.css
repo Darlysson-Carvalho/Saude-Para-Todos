@@ -244,6 +244,5 @@
   .step { padding: 18px; }
 }
 
-/* título do passo dentro da caixa (sem a linha do fieldset cortando) */
-.step legend { float: left; width: 100%; margin-left: 0; padding: 0; }
-.step legend + * { clear: both; }
+/* título do passo: fundo branco para a linha do fieldset não cortar o texto */
+.step legend { background: var(--white); }

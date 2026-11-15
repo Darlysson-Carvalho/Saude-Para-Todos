@@ -107,62 +107,6 @@
   /* a altura segue a proporção da imagem */
 }
 
-/* Marcadores do mapa antigo: não são mais usados */
-.pin {
-  display: none;
-}
-
-/* Cartões flutuantes */
-.float-card {
-  position: absolute;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 12px 16px;
-  background: var(--white);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow-md);
-}
-
-.float-card strong {
-  display: block;
-  font-size: 0.95rem;
-  line-height: 1.2;
-}
-
-.float-card span {
-  display: block;
-  font-size: 0.8rem;
-  color: var(--muted);
-}
-
-.float-icon {
-  flex: none;
-  width: 40px;
-  height: 40px;
-  padding: 9px;
-  color: var(--blue-600);
-  background: var(--blue-100);
-  border-radius: 12px;
-}
-
-.float-icon--ok {
-  color: #0f6b60;
-  background: var(--teal-100);
-}
-
-.float-card--info {
-  left: -6px;
-  bottom: 28px;
-  animation: float 5s ease-in-out infinite;
-}
-
-.float-card--badge {
-  right: -6px;
-  top: 34px;
-  animation: float 6s ease-in-out -2s infinite;
-}
-
 /* ---------- FAIXA DE CONFIANÇA ---------- */
 .trust {
   padding-block: 8px 24px;
@@ -690,19 +634,6 @@
     display: none;
   }
 
-  .float-card--info {
-    left: 0;
-    bottom: 14px;
-  }
-
-  .float-card--badge {
-    right: 0;
-    top: 14px;
-  }
-
-  .float-card {
-    padding: 10px 12px;
-  }
 
   .cta-box {
     padding: 40px 20px;
