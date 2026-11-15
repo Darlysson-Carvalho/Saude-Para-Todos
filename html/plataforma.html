@@ -1,31 +1,35 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Encontre unidades de saúde, consulte serviços e veja opções de atendimento.">
-  <title>Plataforma de Saúde — Saúde para Todos</title>
+  <meta name="description" content="Encontre unidades de saúde (UBS, PSF e hospitais), filtre por SUS ou planos de saúde e veja horários e especialidades.">
+  <meta name="theme-color" content="#2b8bd8">
+  <title>Plataforma de saúde — Saúde para Todos</title>
+
+  <!-- Fonte moderna (opcional: sem ela o navegador usa uma fonte do sistema) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- base (todas as páginas) → componentes (plataforma) → CSS desta página -->
   <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/componentes.css">
   <link rel="stylesheet" href="../css/plataforma.css">
 </head>
-
 <body>
-  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
 
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo principal</a>
+
+  <!-- ==================== CABEÇALHO ==================== -->
   <header class="site-header">
     <div class="container header-inner">
-      <a class="brand" href="index.html" aria-label="Saúde para Todos - página inicial">
-        <span class="brand-icon" aria-hidden="true">+</span>
+      <a class="brand" href="index.html" aria-label="Saúde para Todos — página inicial">
+        <span class="brand-icon" aria-hidden="true">
+          <svg class="icon" viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1.1L12 21l7.8-7.5 1-1.1a5.5 5.5 0 0 0 0-7.8z"/><path d="M3.5 12h4l1.5-2.5 2.5 5 1.5-2.5h7"/></svg>
+        </span>
         <span>Saúde para Todos</span>
       </a>
-      <nav class="main-nav" aria-label="Navegação principal">
-        <ul>
-          <li><a href="plataforma.html" aria-current="page">Início</a></li>
-          <li><a href="localizacao.html">Unidades</a></li>
-          <li><a href="atendimento.html">Agendamentos</a></li>
-        </ul>
-      </nav>
       <div class="header-actions">
         <a class="btn btn--outline" href="login.html">Entrar</a>
         <a class="btn btn--primary" href="cadastro.html">Criar conta</a>
@@ -33,128 +37,315 @@
     </div>
   </header>
 
-  <main id="conteudo" class="platform-main">
-    <section class="platform-hero">
-      <div class="container hero-content">
-        <div>
-          <span class="eyebrow">Cuidado mais acessível</span>
-          <h1>Encontre atendimento de saúde <span>perto de você.</span></h1>
-          <p>Consulte unidades, conheça as especialidades disponíveis e encontre a melhor opção para o seu atendimento.
-          </p>
-          <a class="btn btn--primary" href="#buscar-unidades">Buscar unidade</a>
+  <!-- Abas: navegação entre as telas da plataforma -->
+  <nav class="app-tabs" aria-label="Seções da plataforma">
+    <div class="container">
+      <ul>
+        <li><a href="index.html"><span class="ico" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/></svg></span>Início</a></li>
+        <li><a href="plataforma.html" aria-current="page"><span class="ico" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg></span>Buscar unidades</a></li>
+        <li><a href="localizacao.html"><span class="ico" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M9 4l-6 2v14l6-2 6 2 6-2V4l-6 2z"/><path d="M9 4v14M15 6v14"/></svg></span>Mapa</a></li>
+        <li><a href="atendimento.html"><span class="ico" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg></span>Agendar</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main id="conteudo" class="p-main">
+
+    <!-- ==================== APRESENTAÇÃO ==================== -->
+    <section class="container p-hero" aria-labelledby="titulo-plataforma">
+      <div class="p-hero-card">
+        <div class="p-hero-text">
+          <span class="eyebrow">Plataforma de saúde</span>
+          <h1 id="titulo-plataforma">Encontre atendimento de saúde <span class="grad-text">perto de você</span></h1>
+          <p>Compare unidades do SUS e que aceitam planos de saúde, confira horários e especialidades, veja no mapa e agende sua consulta.</p>
+          <div class="p-hero-actions">
+            <a class="btn btn--primary" href="#unidades">Buscar unidades</a>
+            <a class="btn btn--outline" href="localizacao.html">Ver no mapa</a>
+            <a class="btn btn--outline" href="atendimento.html">Agendar consulta</a>
+          </div>
         </div>
-        <div class="hero-illustration" aria-hidden="true">
-          <div class="illustration-circle"><span>+</span></div>
-          <div class="illustration-card card-one"><strong>24h</strong><small>Informações acessíveis</small></div>
-          <div class="illustration-card card-two"><strong>+</strong><small>Mais cuidado</small></div>
+        <div class="p-hero-art" aria-hidden="true">
+          <div class="p-circle">
+            <svg class="icon" viewBox="0 0 24 24" style="stroke-width:1.6"><path d="M12 5v14M5 12h14"/></svg>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="container guide-section" aria-labelledby="guia-titulo">
-      <div class="section-heading">
-        <div><span class="eyebrow">Como funciona</span>
-          <h2 id="guia-titulo">Encontre o atendimento ideal em poucos passos</h2>
-        </div>
-        <p>Use a plataforma para comparar opções e se preparar para o atendimento.</p>
+    <!-- ==================== GUIA DE USO ==================== -->
+    <section class="container guia" id="guia" aria-labelledby="titulo-guia">
+      <div class="section-head">
+        <span class="eyebrow">Guia de uso</span>
+        <h2 id="titulo-guia">Como usar a plataforma em 4 passos</h2>
       </div>
-      <ol class="guide-grid">
-        <li class="guide-card"><span class="step-number">01</span>
-          <h3>Busque uma unidade</h3>
-          <p>Pesquise pelo nome, bairro ou tipo de estabelecimento.</p>
+
+      <ol class="guia-lista">
+        <li class="guia-card">
+          <h3>Escolha o tipo de atendimento</h3>
+          <p>Selecione <strong>SUS</strong> para unidades públicas ou <strong>Planos de saúde</strong> para quem tem convênio.</p>
         </li>
-        <li class="guide-card"><span class="step-number">02</span>
-          <h3>Confira os serviços</h3>
-          <p>Verifique especialidades, horários e formas de atendimento.</p>
+        <li class="guia-card">
+          <h3>Filtre unidade e especialidade</h3>
+          <p>Veja só UBS, PSF ou hospitais e escolha a especialidade médica que você procura.</p>
         </li>
-        <li class="guide-card"><span class="step-number">03</span>
-          <h3>Veja no mapa ou agende</h3>
-          <p>Consulte a localização e siga para o agendamento quando disponível.</p>
+        <li class="guia-card">
+          <h3>Confira horários e localização</h3>
+          <p>Cada unidade mostra o horário de funcionamento. Use “Ver no mapa” para ver endereço e rota.</p>
+        </li>
+        <li class="guia-card">
+          <h3>Agende sua consulta</h3>
+          <p>Escolha unidade, especialidade, dia e horário e acompanhe em “Meu Local de Atendimento”.</p>
         </li>
       </ol>
+
+      <h3 class="gloss-title">Entenda os tipos de unidade</h3>
+      <dl class="gloss">
+        <div>
+          <dt>UBS</dt>
+          <dd>Unidade Básica de Saúde. É a porta de entrada do SUS: consultas, vacinas, curativos, pré-natal e encaminhamentos.</dd>
+        </div>
+        <div>
+          <dt>PSF / ESF</dt>
+          <dd>Saúde da Família. Equipes acompanham as famílias de uma região, com médico, enfermeiro e agentes comunitários.</dd>
+        </div>
+        <div>
+          <dt>Hospital público</dt>
+          <dd>Atende pelo SUS, com urgência e emergência, internação e consultas de especialidades.</dd>
+        </div>
+        <div>
+          <dt>Hospital privado</dt>
+          <dd>Atende por planos de saúde ou particular. Alguns hospitais filantrópicos atendem SUS e planos.</dd>
+        </div>
+      </dl>
+
+      <div class="notice notice--emerg">
+        <span class="ico" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M12 3l10 18H2z"/><path d="M12 10v5M12 18h.01"/></svg></span>
+        <p><strong>Emergência?</strong> Ligue <strong>192 (SAMU)</strong> ou vá à UPA ou ao hospital mais próximo. Esta plataforma não substitui o atendimento de urgência.</p>
+      </div>
     </section>
 
-    <section class="container search-section" id="buscar-unidades" aria-labelledby="busca-titulo">
-      <div class="section-heading">
-        <div><span class="eyebrow">Rede de atendimento</span>
-          <h2 id="busca-titulo">Unidades de saúde</h2>
-        </div>
-        <a class="text-link" href="localizacao.html">Ver lista e mapa <span aria-hidden="true">→</span></a>
+    <!-- ==================== BUSCA E LISTAGEM ====================
+         Os filtros funcionam só com CSS: os <input type="radio"> e o <select>
+         ficam dentro de .finder e o plataforma.css esconde os cartões que não combinam
+         (regras :has(...:checked)). Sem JavaScript. -->
+    <section class="container finder" id="unidades" aria-labelledby="titulo-busca">
+      <div class="section-head">
+        <span class="eyebrow">Busca</span>
+        <h2 id="titulo-busca">Unidades de saúde</h2>
       </div>
-      <form class="search-panel" action="localizacao.html" method="get">
-        <div class="search-field">
-          <label for="termo">Nome da unidade ou região</label>
-          <input id="termo" name="q" type="search" placeholder="Ex.: UBS, hospital ou bairro">
-        </div>
-        <div class="search-field">
-          <label for="tipo">Tipo de unidade</label>
-          <select id="tipo" name="tipo">
-            <option value="">Todas as unidades</option>
-            <option value="ubs">UBS</option>
-            <option value="psf">PSF</option>
-            <option value="publica">Hospital público</option>
-            <option value="privada">Hospital privado</option>
-          </select>
-        </div>
-        <div class="search-field">
-          <label for="atendimento">Forma de atendimento</label>
-          <select id="atendimento" name="atendimento">
-            <option value="">Todas</option>
-            <option value="sus">SUS</option>
-            <option value="convenio">Planos de saúde</option>
-            <option value="particular">Particular</option>
-          </select>
-        </div>
-        <button class="btn btn--primary search-button" type="submit">Buscar unidades</button>
-      </form>
 
-      <div class="unit-grid">
-        <article class="unit-card">
-          <div class="unit-card-top"><span class="unit-type">UBS · Pública</span><span
-              class="status status--open">Informações ilustrativas</span></div>
-          <h3>Unidade Básica de Saúde Central</h3>
-          <p class="unit-address">Centro · João Pessoa, PB</p>
-          <p class="unit-description">Atendimento básico e acompanhamento de saúde da família.</p>
-          <div class="tag-list"><span>SUS</span><span>Clínica geral</span><span>Enfermagem</span></div>
-          <p class="unit-hours"><strong>Horário:</strong> Segunda a sexta, 7h às 17h</p>
-          <div class="unit-actions"><a class="btn btn--outline" href="localizacao.html">Ver no mapa</a><a
-              class="btn btn--primary" href="atendimento.html">Agendar</a></div>
-        </article>
-        <article class="unit-card">
-          <div class="unit-card-top"><span class="unit-type">Hospital · Público</span><span class="status">Informações
-              ilustrativas</span></div>
-          <h3>Hospital Municipal</h3>
-          <p class="unit-address">Bairro dos Estados · João Pessoa, PB</p>
-          <p class="unit-description">Serviços hospitalares e atendimento de urgência.</p>
-          <div class="tag-list"><span>SUS</span><span>Urgência</span><span>Ortopedia</span></div>
-          <p class="unit-hours"><strong>Horário:</strong> Urgência 24 horas</p>
-          <div class="unit-actions"><a class="btn btn--outline" href="localizacao.html">Ver no mapa</a><a
-              class="btn btn--primary" href="atendimento.html">Agendar</a></div>
-        </article>
-        <article class="unit-card">
-          <div class="unit-card-top"><span class="unit-type">Clínica · Privada</span><span class="status">Informações
-              ilustrativas</span></div>
-          <h3>Centro Médico Vida</h3>
-          <p class="unit-address">Manaíra · João Pessoa, PB</p>
-          <p class="unit-description">Consultas ambulatoriais em diferentes especialidades.</p>
-          <div class="tag-list"><span>Planos</span><span>Cardiologia</span><span>Dermatologia</span></div>
-          <p class="unit-hours"><strong>Horário:</strong> Segunda a sábado, 8h às 18h</p>
-          <div class="unit-actions"><a class="btn btn--outline" href="localizacao.html">Ver no mapa</a><a
-              class="btn btn--primary" href="atendimento.html">Agendar</a></div>
-        </article>
+      <div class="notice notice--demo">
+        <span class="ico" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg></span>
+        <p>Dados de demonstração: nomes, endereços, horários e especialidades são exemplos e serão substituídos pelos dados reais. Confirme sempre com a unidade antes de se deslocar.</p>
       </div>
-      <p class="demo-note">Atenção: nomes, endereços, horários e serviços apresentados são exemplos demonstrativos.
-        Confirme os dados diretamente com a unidade antes de se deslocar.</p>
+
+      <!-- Filtros -->
+      <div class="filters">
+        <fieldset class="filter">
+          <legend>Tipo de atendimento</legend>
+          <div class="chips">
+            <input type="radio" name="atend" id="a-todos" checked><label for="a-todos">Todos</label>
+            <input type="radio" name="atend" id="a-sus"><label for="a-sus">SUS</label>
+            <input type="radio" name="atend" id="a-plano"><label for="a-plano">Planos de saúde</label>
+          </div>
+        </fieldset>
+
+        <fieldset class="filter">
+          <legend>Tipo de unidade</legend>
+          <div class="chips">
+            <input type="radio" name="tipo" id="t-todos" checked><label for="t-todos">Todas</label>
+            <input type="radio" name="tipo" id="t-ubs"><label for="t-ubs">UBS</label>
+            <input type="radio" name="tipo" id="t-psf"><label for="t-psf">PSF</label>
+            <input type="radio" name="tipo" id="t-hpub"><label for="t-hpub">Hospital público</label>
+            <input type="radio" name="tipo" id="t-hpriv"><label for="t-hpriv">Hospital privado</label>
+          </div>
+        </fieldset>
+
+        <div class="filter">
+          <label class="filter-label" for="f-esp">Especialidade médica</label>
+          <select class="select" id="f-esp">
+            <option value="">Todas as especialidades</option>
+            <option value="clinica-geral">Clínica geral</option>
+            <option value="pediatria">Pediatria</option>
+            <option value="ginecologia">Ginecologia</option>
+            <option value="cardiologia">Cardiologia</option>
+            <option value="ortopedia">Ortopedia</option>
+            <option value="dermatologia">Dermatologia</option>
+            <option value="odontologia">Odontologia</option>
+            <option value="oftalmologia">Oftalmologia</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Resultados (o contador “Unidades encontradas” é gerado pelo CSS) -->
+      <div class="results">
+        <div class="units">
+
+          <!-- Unidade 1 -->
+          <article class="unit" data-atend="sus" data-tipo="ubs" data-esp="clinica-geral pediatria odontologia">
+            <header class="unit-head">
+              <span class="unit-icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/><path d="M12 12v5M9.5 14.5h5"/></svg></span>
+              <div>
+                <h3>UBS Central</h3>
+                <div class="tags"><span class="tag tag--tipo">UBS</span><span class="tag tag--sus">SUS</span></div>
+              </div>
+            </header>
+            <p class="unit-end"><span class="ico" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></span>Rua das Flores, 100 — Centro, João Pessoa/PB</p>
+            <div class="unit-bloco">
+              <h4>Horário de funcionamento</h4>
+              <ul class="hours">
+                <li><span>Segunda a sexta</span><strong>07:00 – 17:00</strong></li>
+                <li><span>Sábado</span><strong>Fechado</strong></li>
+                <li><span>Domingo e feriados</span><strong>Fechado</strong></li>
+              </ul>
+            </div>
+            <div class="unit-bloco">
+              <h4>Especialidades</h4>
+              <ul class="esp-lista"><li>Clínica geral</li><li>Pediatria</li><li>Odontologia</li></ul>
+            </div>
+            <div class="unit-actions">
+              <a class="btn btn--outline btn--sm" href="localizacao.html#u-1">Ver no mapa</a>
+              <a class="btn btn--primary btn--sm" href="atendimento.html">Agendar</a>
+            </div>
+          </article>
+
+          <!-- Unidade 2 -->
+          <article class="unit" data-atend="sus" data-tipo="psf" data-esp="clinica-geral pediatria ginecologia">
+            <header class="unit-head">
+              <span class="unit-icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/><path d="M12 12v5M9.5 14.5h5"/></svg></span>
+              <div>
+                <h3>PSF Jardim das Acácias</h3>
+                <div class="tags"><span class="tag tag--tipo">PSF</span><span class="tag tag--sus">SUS</span></div>
+              </div>
+            </header>
+            <p class="unit-end"><span class="ico" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></span>Av. das Acácias, 250 — Jardim das Acácias, João Pessoa/PB</p>
+            <div class="unit-bloco">
+              <h4>Horário de funcionamento</h4>
+              <ul class="hours">
+                <li><span>Segunda a sexta</span><strong>07:00 – 17:00</strong></li>
+                <li><span>Sábado</span><strong>Fechado</strong></li>
+                <li><span>Domingo e feriados</span><strong>Fechado</strong></li>
+              </ul>
+            </div>
+            <div class="unit-bloco">
+              <h4>Especialidades</h4>
+              <ul class="esp-lista"><li>Clínica geral</li><li>Pediatria</li><li>Ginecologia</li></ul>
+            </div>
+            <div class="unit-actions">
+              <a class="btn btn--outline btn--sm" href="localizacao.html#u-2">Ver no mapa</a>
+              <a class="btn btn--primary btn--sm" href="atendimento.html">Agendar</a>
+            </div>
+          </article>
+
+          <!-- Unidade 3 -->
+          <article class="unit" data-atend="sus" data-tipo="hospital-publico" data-esp="clinica-geral cardiologia ortopedia pediatria">
+            <header class="unit-head">
+              <span class="unit-icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M4 21V6a1 1 0 0 1 1-1h9a1 1 0 0 1 1 1v15"/><path d="M15 10h4a1 1 0 0 1 1 1v10"/><path d="M2 21h20"/><path d="M9.5 8v5M7 10.5h5"/></svg></span>
+              <div>
+                <h3>Hospital Municipal Central</h3>
+                <div class="tags"><span class="tag tag--tipo">Hospital público</span><span class="tag tag--sus">SUS</span></div>
+              </div>
+            </header>
+            <p class="unit-end"><span class="ico" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></span>Av. da Saúde, 1000 — Bairro dos Estados, João Pessoa/PB</p>
+            <div class="unit-bloco">
+              <h4>Horário de funcionamento</h4>
+              <ul class="hours">
+                <li><span>Urgência e emergência</span><strong>24 horas</strong></li>
+                <li><span>Ambulatório, seg. a sex.</span><strong>07:00 – 19:00</strong></li>
+                <li><span>Ambulatório, sábado</span><strong>07:00 – 12:00</strong></li>
+              </ul>
+            </div>
+            <div class="unit-bloco">
+              <h4>Especialidades</h4>
+              <ul class="esp-lista"><li>Clínica geral</li><li>Cardiologia</li><li>Ortopedia</li><li>Pediatria</li></ul>
+            </div>
+            <div class="unit-actions">
+              <a class="btn btn--outline btn--sm" href="localizacao.html#u-3">Ver no mapa</a>
+              <a class="btn btn--primary btn--sm" href="atendimento.html">Agendar</a>
+            </div>
+          </article>
+
+          <!-- Unidade 4 -->
+          <article class="unit" data-atend="plano" data-tipo="hospital-privado" data-esp="cardiologia dermatologia ginecologia ortopedia">
+            <header class="unit-head">
+              <span class="unit-icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M4 21V6a1 1 0 0 1 1-1h9a1 1 0 0 1 1 1v15"/><path d="M15 10h4a1 1 0 0 1 1 1v10"/><path d="M2 21h20"/><path d="M9.5 8v5M7 10.5h5"/></svg></span>
+              <div>
+                <h3>Hospital Particular Bem-Estar</h3>
+                <div class="tags"><span class="tag tag--tipo">Hospital privado</span><span class="tag tag--plano">Planos de saúde</span></div>
+              </div>
+            </header>
+            <p class="unit-end"><span class="ico" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></span>Av. Beira-Mar, 800 — Manaíra, João Pessoa/PB</p>
+            <div class="unit-bloco">
+              <h4>Horário de funcionamento</h4>
+              <ul class="hours">
+                <li><span>Pronto atendimento</span><strong>24 horas</strong></li>
+                <li><span>Consultas, seg. a sex.</span><strong>08:00 – 18:00</strong></li>
+                <li><span>Consultas, sábado</span><strong>08:00 – 12:00</strong></li>
+              </ul>
+            </div>
+            <div class="unit-bloco">
+              <h4>Especialidades</h4>
+              <ul class="esp-lista"><li>Cardiologia</li><li>Dermatologia</li><li>Ginecologia</li><li>Ortopedia</li></ul>
+            </div>
+            <div class="unit-actions">
+              <a class="btn btn--outline btn--sm" href="localizacao.html#u-4">Ver no mapa</a>
+              <a class="btn btn--primary btn--sm" href="atendimento.html">Agendar</a>
+            </div>
+          </article>
+
+          <!-- Unidade 5 (atende SUS e planos) -->
+          <article class="unit" data-atend="sus plano" data-tipo="hospital-privado" data-esp="clinica-geral pediatria oftalmologia dermatologia">
+            <header class="unit-head">
+              <span class="unit-icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M4 21V6a1 1 0 0 1 1-1h9a1 1 0 0 1 1 1v15"/><path d="M15 10h4a1 1 0 0 1 1 1v10"/><path d="M2 21h20"/><path d="M9.5 8v5M7 10.5h5"/></svg></span>
+              <div>
+                <h3>Hospital Filantrópico Esperança</h3>
+                <div class="tags"><span class="tag tag--tipo">Hospital privado</span><span class="tag tag--sus">SUS</span><span class="tag tag--plano">Planos de saúde</span></div>
+              </div>
+            </header>
+            <p class="unit-end"><span class="ico" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></span>Rua da Esperança, 300 — Bancários, João Pessoa/PB</p>
+            <div class="unit-bloco">
+              <h4>Horário de funcionamento</h4>
+              <ul class="hours">
+                <li><span>Pronto atendimento</span><strong>24 horas</strong></li>
+                <li><span>Consultas, seg. a sex.</span><strong>07:00 – 18:00</strong></li>
+                <li><span>Consultas, sábado</span><strong>07:00 – 12:00</strong></li>
+              </ul>
+            </div>
+            <div class="unit-bloco">
+              <h4>Especialidades</h4>
+              <ul class="esp-lista"><li>Clínica geral</li><li>Pediatria</li><li>Oftalmologia</li><li>Dermatologia</li></ul>
+            </div>
+            <div class="unit-actions">
+              <a class="btn btn--outline btn--sm" href="localizacao.html#u-5">Ver no mapa</a>
+              <a class="btn btn--primary btn--sm" href="atendimento.html">Agendar</a>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- Vem depois da lista no HTML (o contador do CSS precisa disso) e é
+             exibido acima dela por causa do "order" no CSS. -->
+        <p class="count" aria-live="polite"></p>
+      </div>
+
+      <p class="dica">Sem resultados? Escolha “Todos”, “Todas” ou “Todas as especialidades” para ampliar a busca.</p>
     </section>
+
   </main>
 
+  <!-- ==================== RODAPÉ ==================== -->
   <footer class="site-footer site-footer--mini">
     <div class="container footer-bottom">
-      <nav class="mini-links" aria-label="Links do rodapé"><a href="privacidade.html">Privacidade</a><a
-          href="termos.html">Termos de uso</a><a href="contato.html">Contato</a></nav>
-      <p>© 2026 Saúde para Todos. Informação para aproximar você do cuidado.</p>
+      <nav aria-label="Links do rodapé">
+        <ul class="mini-links">
+          <li><a href="privacidade.html">Política de privacidade</a></li>
+          <li><a href="termos.html">Termos de uso</a></li>
+          <li><a href="contato.html">Contato</a></li>
+        </ul>
+      </nav>
+      <p>&copy; 2026 Saúde para Todos — Todos os direitos reservados.</p>
     </div>
   </footer>
-</body>
 
+</body>
 </html>

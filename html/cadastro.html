@@ -40,6 +40,7 @@
         <h1>Criar cadastro</h1>
         <p class="panel-sub">Preencha os dados abaixo para criar sua conta.</p>
 
+        <!-- TODO: ao ligar o back-end, usar method="post", o action real e name="senha" no campo de senha. -->
         <form class="form" action="plataforma.html" method="get">
           <div class="field">
             <label for="nome">Nome completo</label>
@@ -47,11 +48,7 @@
           </div>
           <div class="field">
             <label for="email">E-mail</label>
-            <input id="email" name="email" type="email" autocomplete="email" placeholder="Ex: paciente@exemplo.com" required>
-          </div>
-          <div class="field">
-            <label for="cpf">CPF</label>
-            <input id="cpf" name="cpf" type="text" autocomplete="off" placeholder="Ex: 123.456.789-00" required>
+            <input id="email" name="email" type="email" autocomplete="email" required>
           </div>
           <div class="field">
             <label for="senha">Senha</label>
