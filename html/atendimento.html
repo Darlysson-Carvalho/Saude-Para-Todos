@@ -1,29 +1,35 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Agende sua consulta escolhendo unidade, convênio ou SUS, especialidade, data e horário.">
+  <meta name="description"
+    content="Agende sua consulta escolhendo unidade, convênio ou SUS, especialidade, data e horário.">
   <meta name="theme-color" content="#2b8bd8">
   <title>Agendar consulta — Saúde para Todos</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap"
+    rel="stylesheet">
 
   <link rel="stylesheet" href="../css/base.css">
   <link rel="stylesheet" href="../css/componentes.css">
-  <link rel="stylesheet" href="../css/atendimento.css">
+  <link rel="stylesheet" href="../css/pages/atendimento.css">
 </head>
-<body>
 
-  <a class="skip-link" href="#conteudo">Pular para o conteúdo principal</a>
+<body>
 
   <header class="site-header">
     <div class="container header-inner">
       <a class="brand" href="index.html" aria-label="Saúde para Todos — página inicial">
         <span class="brand-icon" aria-hidden="true">
-          <svg class="icon" viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1.1L12 21l7.8-7.5 1-1.1a5.5 5.5 0 0 0 0-7.8z"/><path d="M3.5 12h4l1.5-2.5 2.5 5 1.5-2.5h7"/></svg>
+          <svg class="icon" viewBox="0 0 24 24">
+            <path
+              d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1.1L12 21l7.8-7.5 1-1.1a5.5 5.5 0 0 0 0-7.8z" />
+            <path d="M3.5 12h4l1.5-2.5 2.5 5 1.5-2.5h7" />
+          </svg>
         </span>
         <span>Saúde para Todos</span>
       </a>
@@ -37,10 +43,23 @@
   <nav class="app-tabs" aria-label="Seções da plataforma">
     <div class="container">
       <ul>
-        <li><a href="index.html"><span class="ico" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/></svg></span>Início</a></li>
-        <li><a href="plataforma.html"><span class="ico" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg></span>Buscar unidades</a></li>
-        <li><a href="localizacao.html"><span class="ico" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M9 4l-6 2v14l6-2 6 2 6-2V4l-6 2z"/><path d="M9 4v14M15 6v14"/></svg></span>Mapa</a></li>
-        <li><a href="atendimento.html" aria-current="page"><span class="ico" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg></span>Agendar</a></li>
+        <li><a href="index.html"><span class="ico" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24">
+                <path d="M3 11l9-8 9 8" />
+                <path d="M5 10v10h14V10" />
+              </svg></span>Início</a></li>
+        <li><a href="plataforma.html"><span class="ico" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24">
+                <circle cx="11" cy="11" r="7" />
+                <path d="M20 20l-4-4" />
+              </svg></span>Buscar unidades</a></li>
+        <li><a href="localizacao.html"><span class="ico" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24">
+                <path d="M9 4l-6 2v14l6-2 6 2 6-2V4l-6 2z" />
+                <path d="M9 4v14M15 6v14" />
+              </svg></span>Mapa</a></li>
+        <li><a href="atendimento.html" aria-current="page"><span class="ico" aria-hidden="true"><svg class="icon"
+                viewBox="0 0 24 24">
+                <rect x="3" y="5" width="18" height="16" rx="2" />
+                <path d="M3 10h18M8 3v4M16 3v4" />
+              </svg></span>Agendar</a></li>
       </ul>
     </div>
   </nav>
@@ -55,12 +74,14 @@
       </div>
 
       <div class="notice notice--demo">
-        <span class="ico" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg></span>
-        <p>Demonstração: os dados <strong>não são enviados nem salvos</strong>, e ao recarregar a página tudo volta ao início. Unidades, salas e datas são exemplos.</p>
+        <span class="ico" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="9" />
+            <path d="M12 11v5M12 8h.01" />
+          </svg></span>
+        <p>Demonstração: os dados <strong>não são enviados nem salvos</strong>, e ao recarregar a página tudo volta ao
+          início. Unidades, salas e datas são exemplos.</p>
       </div>
 
-      <!-- Tudo está dentro do <form> para o CSS reagir às escolhas (:has / :valid).
-           Não há botão "enviar": o botão final é uma caixa de seleção. -->
       <form class="ag" action="#" autocomplete="off" novalidate>
 
         <div class="ag-form">
@@ -95,8 +116,8 @@
               <label for="operadora">Seu plano (opcional)</label>
               <select id="operadora" class="select">
                 <option>Selecione</option>
-                <option>Plano A (exemplo)</option>
-                <option>Plano B (exemplo)</option>
+                <option>Plano A </option>
+                <option>Plano B </option>
                 <option>Outro</option>
               </select>
             </div>
@@ -109,23 +130,28 @@
             <div class="unis">
               <div class="uni" data-atend="sus">
                 <input type="radio" name="unidade" id="uni-1" required>
-                <label for="uni-1" class="uni-card"><strong>UBS Central</strong><span>Centro · seg a sex, 07h–17h</span><span class="tags"><span class="tag tag--sus">SUS</span></span></label>
+                <label for="uni-1" class="uni-card"><strong>Fundação Napoleão Laureano</strong><span>Jaguaribe · seg a sex,
+                    05h–22h</span><span class="tags"><span class="tag tag--sus">SUS</span></span></label>
               </div>
               <div class="uni" data-atend="sus">
                 <input type="radio" name="unidade" id="uni-2">
-                <label for="uni-2" class="uni-card"><strong>PSF Jardim das Acácias</strong><span>Jardim das Acácias · seg a sex, 07h–17h</span><span class="tags"><span class="tag tag--sus">SUS</span></span></label>
+                <label for="uni-2" class="uni-card"><strong>Hospital Alberto Urquiza Wanderley</strong><span>Torre·
+                    seg a dom, 24h</span><span class="tags"><span class="tag tag--plano">Planos</span></span></label>
               </div>
               <div class="uni" data-atend="sus">
                 <input type="radio" name="unidade" id="uni-3">
-                <label for="uni-3" class="uni-card"><strong>Hospital Municipal Central</strong><span>Bairro dos Estados · ambulatório 07h–19h</span><span class="tags"><span class="tag tag--sus">SUS</span></span></label>
+                <label for="uni-3" class="uni-card"><strong>Complexo Hospitalar Clementino Fraga</strong><span>Jaguaribe
+                    · ambulatório 24 h</span><span class="tags"><span class="tag tag--sus">SUS</span></span></label>
               </div>
               <div class="uni" data-atend="plano">
                 <input type="radio" name="unidade" id="uni-4">
-                <label for="uni-4" class="uni-card"><strong>Hospital Particular Bem-Estar</strong><span>Manaíra · consultas 08h–18h</span><span class="tags"><span class="tag tag--plano">Planos</span></span></label>
+                <label for="uni-4" class="uni-card"><strong>Hospital Universitário Lauro Wanderley</strong><span>Castelo Branco·
+                    consultas 24h</span><span class="tags"><span class="tag tag--sus">SUS</span></span></label>
               </div>
               <div class="uni" data-atend="sus plano">
                 <input type="radio" name="unidade" id="uni-5">
-                <label for="uni-5" class="uni-card"><strong>Hospital Filantrópico Esperança</strong><span>Bancários · consultas 07h–18h</span><span class="tags"><span class="tag tag--sus">SUS</span><span class="tag tag--plano">Planos</span></span></label>
+                <label for="uni-5" class="uni-card"><strong>Complexo Hospitalar de Mangabeira Governador Tarcísio de Miranda Burity</strong><span>Mangabeira ·
+                    Urgência e Emergência 24h</span><span class="tags"><span class="tag tag--sus">SUS</span></span></label>
               </div>
             </div>
           </fieldset>
@@ -133,7 +159,8 @@
           <!-- 4. Especialidade (a lista muda conforme a unidade) -->
           <fieldset class="step">
             <legend><span class="n">4</span>Especialidade *</legend>
-            <p class="hint hint-uni">Escolha uma unidade para ver as especialidades. Se trocar de unidade, escolha a especialidade de novo.</p>
+            <p class="hint hint-uni">Escolha uma unidade para ver as especialidades. Se trocar de unidade, escolha a
+              especialidade de novo.</p>
 
             <div class="esp-g esp-g1 chips">
               <input type="radio" name="especialidade" id="e1-cg" required><label for="e1-cg">Clínica geral</label>
@@ -215,40 +242,78 @@
           <h2 id="titulo-local">Meu Local de Atendimento</h2>
 
           <div class="status-box" aria-live="polite">
-            <div class="status st-wait"><span class="dot"></span><div><small>Status do agendamento</small><strong>Aguardando preenchimento</strong></div></div>
-            <div class="status st-ready"><span class="dot"></span><div><small>Status do agendamento</small><strong>Pronto para confirmar</strong></div></div>
-            <div class="status st-done"><span class="dot"></span><div><small>Status do agendamento</small><strong>Confirmado (demonstração)</strong></div></div>
+            <div class="status st-wait"><span class="dot"></span>
+              <div><small>Status do agendamento</small><strong>Aguardando preenchimento</strong></div>
+            </div>
+            <div class="status st-ready"><span class="dot"></span>
+              <div><small>Status do agendamento</small><strong>Pronto para confirmar</strong></div>
+            </div>
+            <div class="status st-done"><span class="dot"></span>
+              <div><small>Status do agendamento</small><strong>Confirmado (demonstração)</strong></div>
+            </div>
           </div>
 
           <dl class="resumo">
-            <div><dt>Unidade</dt><dd class="out-unit"></dd></div>
-            <div><dt>Endereço</dt><dd class="out-end"></dd></div>
-            <div><dt>Sala / consultório</dt><dd class="out-sala"></dd></div>
-            <div><dt>Atendimento</dt><dd class="out-conv"></dd></div>
-            <div><dt>Especialidade</dt><dd class="out-esp"></dd></div>
-            <div><dt>Data</dt><dd class="out-data"></dd></div>
-            <div><dt>Horário</dt><dd class="out-hora"></dd></div>
+            <div>
+              <dt>Unidade</dt>
+              <dd class="out-unit"></dd>
+            </div>
+            <div>
+              <dt>Endereço</dt>
+              <dd class="out-end"></dd>
+            </div>
+            <div>
+              <dt>Sala / consultório</dt>
+              <dd class="out-sala"></dd>
+            </div>
+            <div>
+              <dt>Atendimento</dt>
+              <dd class="out-conv"></dd>
+            </div>
+            <div>
+              <dt>Especialidade</dt>
+              <dd class="out-esp"></dd>
+            </div>
+            <div>
+              <dt>Data</dt>
+              <dd class="out-data"></dd>
+            </div>
+            <div>
+              <dt>Horário</dt>
+              <dd class="out-hora"></dd>
+            </div>
           </dl>
 
           <div class="pmap">
             <div class="pm pm-0">Escolha uma unidade para ver a localização no mapa.</div>
-            <iframe class="pm pm-1" title="Mapa: UBS Central" loading="lazy" src="https://www.openstreetmap.org/export/embed.html?bbox=-34.8731%2C-7.1245%2C-34.8531%2C-7.1145&amp;layer=mapnik&amp;marker=-7.1195%2C-34.8631"></iframe>
-            <iframe class="pm pm-2" title="Mapa: PSF Jardim das Acácias" loading="lazy" src="https://www.openstreetmap.org/export/embed.html?bbox=-34.8550%2C-7.1400%2C-34.8350%2C-7.1300&amp;layer=mapnik&amp;marker=-7.1350%2C-34.8450"></iframe>
-            <iframe class="pm pm-3" title="Mapa: Hospital Municipal Central" loading="lazy" src="https://www.openstreetmap.org/export/embed.html?bbox=-34.8600%2C-7.1350%2C-34.8400%2C-7.1250&amp;layer=mapnik&amp;marker=-7.1300%2C-34.8500"></iframe>
-            <iframe class="pm pm-4" title="Mapa: Hospital Particular Bem-Estar" loading="lazy" src="https://www.openstreetmap.org/export/embed.html?bbox=-34.8400%2C-7.1000%2C-34.8200%2C-7.0900&amp;layer=mapnik&amp;marker=-7.0950%2C-34.8300"></iframe>
-            <iframe class="pm pm-5" title="Mapa: Hospital Filantrópico Esperança" loading="lazy" src="https://www.openstreetmap.org/export/embed.html?bbox=-34.8500%2C-7.1550%2C-34.8300%2C-7.1450&amp;layer=mapnik&amp;marker=-7.1500%2C-34.8400"></iframe>
+            <iframe class="pm pm-1" title="Mapa: UBS Central" loading="lazy"
+              src="https://www.openstreetmap.org/export/embed.html?bbox=-34.8731%2C-7.1245%2C-34.8531%2C-7.1145&amp;layer=mapnik&amp;marker=-7.1195%2C-34.8631"></iframe>
+            <iframe class="pm pm-2" title="Mapa: PSF Jardim das Acácias" loading="lazy"
+              src="https://www.openstreetmap.org/export/embed.html?bbox=-34.8550%2C-7.1400%2C-34.8350%2C-7.1300&amp;layer=mapnik&amp;marker=-7.1350%2C-34.8450"></iframe>
+            <iframe class="pm pm-3" title="Mapa: Hospital Municipal Central" loading="lazy"
+              src="https://www.openstreetmap.org/export/embed.html?bbox=-34.8600%2C-7.1350%2C-34.8400%2C-7.1250&amp;layer=mapnik&amp;marker=-7.1300%2C-34.8500"></iframe>
+            <iframe class="pm pm-4" title="Mapa: Hospital Particular Bem-Estar" loading="lazy"
+              src="https://www.openstreetmap.org/export/embed.html?bbox=-34.8400%2C-7.1000%2C-34.8200%2C-7.0900&amp;layer=mapnik&amp;marker=-7.0950%2C-34.8300"></iframe>
+            <iframe class="pm pm-5" title="Mapa: Hospital Filantrópico Esperança" loading="lazy"
+              src="https://www.openstreetmap.org/export/embed.html?bbox=-34.8500%2C-7.1550%2C-34.8300%2C-7.1450&amp;layer=mapnik&amp;marker=-7.1500%2C-34.8400"></iframe>
           </div>
 
           <div class="links-local">
-            <a class="btn btn--primary btn--sm rota rota-1" target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/dir/?api=1&amp;destination=-7.1195,-34.8631">Como chegar</a>
-            <a class="btn btn--primary btn--sm rota rota-2" target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/dir/?api=1&amp;destination=-7.1350,-34.8450">Como chegar</a>
-            <a class="btn btn--primary btn--sm rota rota-3" target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/dir/?api=1&amp;destination=-7.1300,-34.8500">Como chegar</a>
-            <a class="btn btn--primary btn--sm rota rota-4" target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/dir/?api=1&amp;destination=-7.0950,-34.8300">Como chegar</a>
-            <a class="btn btn--primary btn--sm rota rota-5" target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/dir/?api=1&amp;destination=-7.1500,-34.8400">Como chegar</a>
+            <a class="btn btn--primary btn--sm rota rota-1" target="_blank" rel="noopener noreferrer"
+              href="https://www.google.com/maps/dir/?api=1&amp;destination=-7.1195,-34.8631">Como chegar</a>
+            <a class="btn btn--primary btn--sm rota rota-2" target="_blank" rel="noopener noreferrer"
+              href="https://www.google.com/maps/dir/?api=1&amp;destination=-7.1350,-34.8450">Como chegar</a>
+            <a class="btn btn--primary btn--sm rota rota-3" target="_blank" rel="noopener noreferrer"
+              href="https://www.google.com/maps/dir/?api=1&amp;destination=-7.1300,-34.8500">Como chegar</a>
+            <a class="btn btn--primary btn--sm rota rota-4" target="_blank" rel="noopener noreferrer"
+              href="https://www.google.com/maps/dir/?api=1&amp;destination=-7.0950,-34.8300">Como chegar</a>
+            <a class="btn btn--primary btn--sm rota rota-5" target="_blank" rel="noopener noreferrer"
+              href="https://www.google.com/maps/dir/?api=1&amp;destination=-7.1500,-34.8400">Como chegar</a>
             <a class="btn btn--outline btn--sm" href="localizacao.html">Ver todas as unidades</a>
           </div>
 
-          <p class="nota">Leve documento com foto e chegue 15 minutos antes. A sala é um exemplo e deve ser confirmada na recepção.</p>
+          <p class="nota">Leve documento com foto e chegue 15 minutos antes. A sala é um exemplo e deve ser confirmada
+            na recepção.</p>
         </aside>
 
       </form>
@@ -269,4 +334,5 @@
   </footer>
 
 </body>
+
 </html>

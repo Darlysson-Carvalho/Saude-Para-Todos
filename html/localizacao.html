@@ -13,7 +13,7 @@
 
   <link rel="stylesheet" href="../css/base.css">
   <link rel="stylesheet" href="../css/componentes.css">
-  <link rel="stylesheet" href="../css/localizacao.css">
+  <link rel="stylesheet" href="../css/pages/localizacao.css">
 </head>
 <body>
 
@@ -59,8 +59,6 @@
         <p>Dados de demonstração: unidades, posições no mapa e médicos são exemplos. Confirme sempre com a unidade.</p>
       </div>
 
-      <!-- Tela dividida: lista (esquerda) + detalhes/mapa (direita).
-           A seleção usa o endereço da página (#u-1, #u-2...) e o CSS :target. -->
       <div class="split">
 
         <!-- ===== LISTA ===== -->
@@ -75,7 +73,7 @@
             <span class="filter-label">Tipo de unidade</span>
             <div class="chips">
               <input type="radio" name="ltipo" id="lt-todos" checked><label for="lt-todos">Todas</label>
-              <input type="radio" name="ltipo" id="lt-ubs"><label for="lt-ubs">UBS/PSF</label>
+              <input type="radio" name="ltipo" id="lt-ubs"><label for="lt-ubs">UBS/USF</label>
               <input type="radio" name="ltipo" id="lt-hosp"><label for="lt-hosp">Hospitais</label>
             </div>
           </div>
@@ -83,24 +81,36 @@
 
           <ul class="unit-list">
             <li class="unit-item" data-atend="sus" data-tipo="ubs">
-              <a href="#u-1"><strong>UBS Central</strong><span>Centro</span>
-                <span class="tags"><span class="tag tag--tipo">UBS</span><span class="tag tag--sus">SUS</span></span></a>
+              <a href="#u-1"><strong>Fundação Napoleão Laureano</strong><span>Jaguaribe</span>
+                <span class="tags"><span class="tag tag--tipo">Hospital privado</span><span class="tag tag--sus">SUS</span></span></a>
             </li>
             <li class="unit-item" data-atend="sus" data-tipo="ubs">
-              <a href="#u-2"><strong>PSF Jardim das Acácias</strong><span>Jardim das Acácias</span>
-                <span class="tags"><span class="tag tag--tipo">PSF</span><span class="tag tag--sus">SUS</span></span></a>
+              <a href="#u-2"><strong>Hospital Alberto Urquiza Wanderley</strong><span>Torre</span>
+                <span class="tags"><span class="tag tag--tipo">Hospital privado</span><span class="tag tag--plano">Planos</span></span></a>
             </li>
             <li class="unit-item" data-atend="sus" data-tipo="hosp">
-              <a href="#u-3"><strong>Hospital Municipal Central</strong><span>Bairro dos Estados</span>
+              <a href="#u-3"><strong>Complexo Hospitalar Clementino Fraga</strong><span>Jaguaribe</span>
                 <span class="tags"><span class="tag tag--tipo">Hospital público</span><span class="tag tag--sus">SUS</span></span></a>
             </li>
             <li class="unit-item" data-atend="plano" data-tipo="hosp">
-              <a href="#u-4"><strong>Hospital Particular Bem-Estar</strong><span>Manaíra</span>
-                <span class="tags"><span class="tag tag--tipo">Hospital privado</span><span class="tag tag--plano">Planos</span></span></a>
+              <a href="#u-4"><strong>Hospital Universitário Lauro Wanderley</strong><span>Castelo Branco</span>
+                <span class="tags"><span class="tag tag--tipo">Hospital público</span><span class="tag tag--sus">SUS</span></span></a>
             </li>
             <li class="unit-item" data-atend="sus plano" data-tipo="hosp">
-              <a href="#u-5"><strong>Hospital Filantrópico Esperança</strong><span>Bancários</span>
-                <span class="tags"><span class="tag tag--tipo">Hospital privado</span><span class="tag tag--sus">SUS</span><span class="tag tag--plano">Planos</span></span></a>
+              <a href="#u-5"><strong>Complexo Hospitalar de Mangabeira Governador Tarcísio de Miranda Burity</strong><span>Bancários</span>
+                <span class="tags"><span class="tag tag--tipo">Hospital público</span><span class="tag tag--sus">SUS</span></span></a>
+            </li>
+            <li class="unit-item" data-atend="sus plano" data-tipo="hosp">
+              <a href="#u-6"><strong>Hospital de Emergência e Trauma Senador Humberto Lucena</strong><span>Pedro Gondim</span>
+                <span class="tags"><span class="tag tag--tipo">Hospital público</span><span class="tag tag--sus">SUS</span></span></a>
+            </li>
+            <li class="unit-item" data-atend="sus plano" data-tipo="hosp">
+              <a href="#u-7"><strong>USF integrada jardim cidade universitária</strong><span>Bancários</span>
+                <span class="tags"><span class="tag tag--tipo">USF</span><span class="tag tag--sus">SUS</span></span></a>
+            </li>
+            <li class="unit-item" data-atend="sus plano" data-tipo="hosp">
+              <a href="#u-8"><strong>UBS Parque do Sol</strong><span>Parque do Sol</span>
+                <span class="tags"><span class="tag tag--tipo">UBS</span><span class="tag tag--sus">SUS</span></span></a>
             </li>
           </ul>
           <p class="list-count"></p>
@@ -115,9 +125,9 @@
               <iframe title="Mapa: UBS Central" loading="lazy" src="https://www.openstreetmap.org/export/embed.html?bbox=-34.8731%2C-7.1245%2C-34.8531%2C-7.1145&amp;layer=mapnik&amp;marker=-7.1195%2C-34.8631"></iframe>
             </div>
             <div class="detail-body">
-              <h2>UBS Central</h2>
-              <div class="tags"><span class="tag tag--tipo">UBS</span><span class="tag tag--sus">SUS</span></div>
-              <p class="addr">Rua das Flores, 100 — Centro, João Pessoa/PB</p>
+              <h2>Fundação Napoleão Laureano</h2>
+              <div class="tags"><span class="tag tag--tipo">Hospital público</span><span class="tag tag--sus">SUS</span></div>
+              <p class="addr">Av. Cap. José Pessoa, 1140 - Jaguaribe, João Pessoa - PB, 58015-170</p>
               <div class="detail-actions">
                 <a class="btn btn--primary btn--sm" target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/dir/?api=1&amp;destination=-7.1195,-34.8631">Como chegar (rota)</a>
                 <a class="btn btn--outline btn--sm" target="_blank" rel="noopener noreferrer" href="https://www.openstreetmap.org/?mlat=-7.1195&amp;mlon=-34.8631#map=17/-7.1195/-34.8631">Abrir mapa maior</a>
@@ -127,19 +137,19 @@
                 <section>
                   <h3>Horário de funcionamento</h3>
                   <ul class="hours">
-                    <li><span>Segunda a sexta</span><strong>07:00 – 17:00</strong></li>
-                    <li><span>Sábado</span><strong>Fechado</strong></li>
-                    <li><span>Domingo e feriados</span><strong>Fechado</strong></li>
+                    <li><span>Segunda a sexta</span><strong>05:00 – 22:00</strong></li>
+                    <li><span>Sábado</span><strong>24 horas</strong></li>
+                    <li><span>Domingo</span><strong>24 horas</strong></li>
                   </ul>
                 </section>
                 <section>
                   <h3>Disponibilidade dos médicos</h3>
                   <div class="table-wrap"><table class="tbl">
-                    <thead><tr><th>Médico (exemplo)</th><th>Especialidade</th><th>Dias</th><th>Situação</th></tr></thead>
+                    <thead><tr><th>Médico </th><th>Especialidade</th><th>Dias</th><th>Situação</th></tr></thead>
                     <tbody>
-                      <tr><td>Dra. Ana Exemplo</td><td>Clínica geral</td><td>Seg a sex</td><td><span class="tag tag--ok">Disponível</span></td></tr>
-                      <tr><td>Dr. Bruno Exemplo</td><td>Pediatria</td><td>Ter e qui</td><td><span class="tag tag--cheia">Agenda cheia hoje</span></td></tr>
-                      <tr><td>Dra. Carla Exemplo</td><td>Odontologia</td><td>Seg, qua, sex</td><td><span class="tag tag--sem">Sem atendimento hoje</span></td></tr>
+                      <tr><td>Dra. Ana </td><td>Oncologia e Cirurgia Oncológica</td><td>Seg a Dom</td><td><span class="tag tag--ok">Disponível</span></td></tr>
+                      <tr><td>Dr. Bruno </td><td>Hematologia</td><td>Ter e qui</td><td><span class="tag tag--cheia">Agenda cheia hoje</span></td></tr>
+                      <tr><td>Dra. Carla </td><td>Mastologia</td><td>Seg a sex</td><td><span class="tag tag--sem">Sem atendimento hoje</span></td></tr>
                     </tbody>
                   </table></div>
                 </section>
@@ -153,9 +163,9 @@
               <iframe title="Mapa: PSF Jardim das Acácias" loading="lazy" src="https://www.openstreetmap.org/export/embed.html?bbox=-34.8550%2C-7.1400%2C-34.8350%2C-7.1300&amp;layer=mapnik&amp;marker=-7.1350%2C-34.8450"></iframe>
             </div>
             <div class="detail-body">
-              <h2>PSF Jardim das Acácias</h2>
-              <div class="tags"><span class="tag tag--tipo">PSF</span><span class="tag tag--sus">SUS</span></div>
-              <p class="addr">Av. das Acácias, 250 — Jardim das Acácias, João Pessoa/PB</p>
+              <h2>Hospital Alberto Urquiza Wanderley</h2>
+              <div class="tags"><span class="tag tag--tipo">Hospital privado</span><span class="tag tag--plano">Planos</span></div>
+              <p class="addr">Av. Min. José Américo de Almeida, 1450 - Torre, João Pessoa - PB, 58040-300</p>
               <div class="detail-actions">
                 <a class="btn btn--primary btn--sm" target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/dir/?api=1&amp;destination=-7.1350,-34.8450">Como chegar (rota)</a>
                 <a class="btn btn--outline btn--sm" target="_blank" rel="noopener noreferrer" href="https://www.openstreetmap.org/?mlat=-7.1350&amp;mlon=-34.8450#map=17/-7.1350/-34.8450">Abrir mapa maior</a>
@@ -165,19 +175,19 @@
                 <section>
                   <h3>Horário de funcionamento</h3>
                   <ul class="hours">
-                    <li><span>Segunda a sexta</span><strong>07:00 – 17:00</strong></li>
-                    <li><span>Sábado</span><strong>Fechado</strong></li>
-                    <li><span>Domingo e feriados</span><strong>Fechado</strong></li>
+                    <li><span>Segunda a sexta</span><strong>24 horas</strong></li>
+                    <li><span>Sábado</span><strong>24 horas</strong></li>
+                    <li><span>Domingo</span><strong>24 horas</strong></li>
                   </ul>
                 </section>
                 <section>
                   <h3>Disponibilidade dos médicos</h3>
                   <div class="table-wrap"><table class="tbl">
-                    <thead><tr><th>Médico (exemplo)</th><th>Especialidade</th><th>Dias</th><th>Situação</th></tr></thead>
+                    <thead><tr><th>Médico </th><th>Especialidade</th><th>Dias</th><th>Situação</th></tr></thead>
                     <tbody>
-                      <tr><td>Dr. Diego Exemplo</td><td>Clínica geral</td><td>Seg a sex</td><td><span class="tag tag--ok">Disponível</span></td></tr>
-                      <tr><td>Dra. Elisa Exemplo</td><td>Ginecologia</td><td>Qua e sex</td><td><span class="tag tag--ok">Disponível</span></td></tr>
-                      <tr><td>Dr. Fábio Exemplo</td><td>Pediatria</td><td>Ter e qui</td><td><span class="tag tag--sem">Sem atendimento hoje</span></td></tr>
+                      <tr><td>Dr. Diego </td><td>Clínica geral</td><td>Seg a sex</td><td><span class="tag tag--ok">Disponível</span></td></tr>
+                      <tr><td>Dra. Elisa </td><td>Cardiologia</td><td>Qua e sex</td><td><span class="tag tag--ok">Disponível</span></td></tr>
+                      <tr><td>Dr. Fábio</td><td>Pediatria</td><td>Ter e qui</td><td><span class="tag tag--sem">Sem atendimento hoje</span></td></tr>
                     </tbody>
                   </table></div>
                 </section>
@@ -191,9 +201,9 @@
               <iframe title="Mapa: Hospital Municipal Central" loading="lazy" src="https://www.openstreetmap.org/export/embed.html?bbox=-34.8600%2C-7.1350%2C-34.8400%2C-7.1250&amp;layer=mapnik&amp;marker=-7.1300%2C-34.8500"></iframe>
             </div>
             <div class="detail-body">
-              <h2>Hospital Municipal Central</h2>
+              <h2>Complexo Hospitalar Clementino Fraga</h2>
               <div class="tags"><span class="tag tag--tipo">Hospital público</span><span class="tag tag--sus">SUS</span></div>
-              <p class="addr">Av. da Saúde, 1000 — Bairro dos Estados, João Pessoa/PB</p>
+              <p class="addr">Rua Ester Borges Bastos, s/n, Bairro Jaguaribe, João Pessoa - PB (CEP: 58015-270).</p>
               <div class="detail-actions">
                 <a class="btn btn--primary btn--sm" target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/dir/?api=1&amp;destination=-7.1300,-34.8500">Como chegar (rota)</a>
                 <a class="btn btn--outline btn--sm" target="_blank" rel="noopener noreferrer" href="https://www.openstreetmap.org/?mlat=-7.1300&amp;mlon=-34.8500#map=17/-7.1300/-34.8500">Abrir mapa maior</a>
@@ -204,19 +214,19 @@
                   <h3>Horário de funcionamento</h3>
                   <ul class="hours">
                     <li><span>Urgência e emergência</span><strong>24 horas</strong></li>
-                    <li><span>Ambulatório, seg. a sex.</span><strong>07:00 – 19:00</strong></li>
-                    <li><span>Ambulatório, sábado</span><strong>07:00 – 12:00</strong></li>
+                    <li><span>Ambulatório, seg. a sex.</span><strong>24 horas</strong></li>
+                    <li><span>Ambulatório, sábado</span><strong>24 horas</strong></li>
                   </ul>
                 </section>
                 <section>
                   <h3>Disponibilidade dos médicos</h3>
                   <div class="table-wrap"><table class="tbl">
-                    <thead><tr><th>Médico (exemplo)</th><th>Especialidade</th><th>Dias</th><th>Situação</th></tr></thead>
+                    <thead><tr><th>Médico </th><th>Especialidade</th><th>Dias</th><th>Situação</th></tr></thead>
                     <tbody>
-                      <tr><td>Dr. Gustavo Exemplo</td><td>Cardiologia</td><td>Seg, qua, sex</td><td><span class="tag tag--ok">Disponível</span></td></tr>
-                      <tr><td>Dra. Helena Exemplo</td><td>Ortopedia</td><td>Ter e qui</td><td><span class="tag tag--cheia">Agenda cheia hoje</span></td></tr>
-                      <tr><td>Dr. Igor Exemplo</td><td>Clínica geral</td><td>Plantão 24 h</td><td><span class="tag tag--ok">Disponível</span></td></tr>
-                      <tr><td>Dra. Julia Exemplo</td><td>Pediatria</td><td>Seg a sex</td><td><span class="tag tag--ok">Disponível</span></td></tr>
+                      <tr><td>Dr. Gustavo </td><td>Cardiologia</td><td>Seg, qua, sex</td><td><span class="tag tag--ok">Disponível</span></td></tr>
+                      <tr><td>Dra. Helena </td><td>Ortopedia</td><td>Ter e qui</td><td><span class="tag tag--cheia">Agenda cheia hoje</span></td></tr>
+                      <tr><td>Dr. Igor </td><td>Clínica geral</td><td>Plantão 24 h</td><td><span class="tag tag--ok">Disponível</span></td></tr>
+                      <tr><td>Dra. Julia </td><td>Pediatria</td><td>Seg a sex</td><td><span class="tag tag--ok">Disponível</span></td></tr>
                     </tbody>
                   </table></div>
                 </section>
@@ -230,9 +240,9 @@
               <iframe title="Mapa: Hospital Particular Bem-Estar" loading="lazy" src="https://www.openstreetmap.org/export/embed.html?bbox=-34.8400%2C-7.1000%2C-34.8200%2C-7.0900&amp;layer=mapnik&amp;marker=-7.0950%2C-34.8300"></iframe>
             </div>
             <div class="detail-body">
-              <h2>Hospital Particular Bem-Estar</h2>
-              <div class="tags"><span class="tag tag--tipo">Hospital privado</span><span class="tag tag--plano">Planos de saúde</span></div>
-              <p class="addr">Av. Beira-Mar, 800 — Manaíra, João Pessoa/PB</p>
+              <h2>Hospital Universitário Lauro Wanderley</h2>
+              <div class="tags"><span class="tag tag--tipo">Hospital público</span><span class="tag tag--sus">SUS</span></div>
+              <p class="addr">R. Tabeliao Estanislau Eloy, 585 - Castelo Branco, João Pessoa - PB, 58050-585</p>
               <div class="detail-actions">
                 <a class="btn btn--primary btn--sm" target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/dir/?api=1&amp;destination=-7.0950,-34.8300">Como chegar (rota)</a>
                 <a class="btn btn--outline btn--sm" target="_blank" rel="noopener noreferrer" href="https://www.openstreetmap.org/?mlat=-7.0950&amp;mlon=-34.8300#map=17/-7.0950/-34.8300">Abrir mapa maior</a>
@@ -243,19 +253,19 @@
                   <h3>Horário de funcionamento</h3>
                   <ul class="hours">
                     <li><span>Pronto atendimento</span><strong>24 horas</strong></li>
-                    <li><span>Consultas, seg. a sex.</span><strong>08:00 – 18:00</strong></li>
-                    <li><span>Consultas, sábado</span><strong>08:00 – 12:00</strong></li>
+                    <li><span>Consultas, seg. a sex.</span><strong>24 horas</strong></li>
+                    <li><span>Consultas, sábado</span><strong>24 horas</strong></li>
                   </ul>
                 </section>
                 <section>
                   <h3>Disponibilidade dos médicos</h3>
                   <div class="table-wrap"><table class="tbl">
-                    <thead><tr><th>Médico (exemplo)</th><th>Especialidade</th><th>Dias</th><th>Situação</th></tr></thead>
+                    <thead><tr><th>Médico </th><th>Especialidade</th><th>Dias</th><th>Situação</th></tr></thead>
                     <tbody>
-                      <tr><td>Dr. Kleber Exemplo</td><td>Cardiologia</td><td>Seg a sex</td><td><span class="tag tag--ok">Disponível</span></td></tr>
-                      <tr><td>Dra. Laura Exemplo</td><td>Dermatologia</td><td>Ter e qui</td><td><span class="tag tag--cheia">Agenda cheia hoje</span></td></tr>
-                      <tr><td>Dra. Marta Exemplo</td><td>Ginecologia</td><td>Seg, qua, sex</td><td><span class="tag tag--ok">Disponível</span></td></tr>
-                      <tr><td>Dr. Nelson Exemplo</td><td>Ortopedia</td><td>Qua e sex</td><td><span class="tag tag--sem">Sem atendimento hoje</span></td></tr>
+                      <tr><td>Dr. Kleber </td><td>Cardiologia</td><td>Seg a sex</td><td><span class="tag tag--ok">Disponível</span></td></tr>
+                      <tr><td>Dra. Laura </td><td>Dermatologia</td><td>Ter e qui</td><td><span class="tag tag--cheia">Agenda cheia hoje</span></td></tr>
+                      <tr><td>Dra. Marta </td><td>Ginecologia</td><td>Seg, qua, sex</td><td><span class="tag tag--ok">Disponível</span></td></tr>
+                      <tr><td>Dr. Nelson </td><td>Ortopedia</td><td>Qua e sex</td><td><span class="tag tag--sem">Sem atendimento hoje</span></td></tr>
                     </tbody>
                   </table></div>
                 </section>
@@ -269,9 +279,9 @@
               <iframe title="Mapa: Hospital Filantrópico Esperança" loading="lazy" src="https://www.openstreetmap.org/export/embed.html?bbox=-34.8500%2C-7.1550%2C-34.8300%2C-7.1450&amp;layer=mapnik&amp;marker=-7.1500%2C-34.8400"></iframe>
             </div>
             <div class="detail-body">
-              <h2>Hospital Filantrópico Esperança</h2>
-              <div class="tags"><span class="tag tag--tipo">Hospital privado</span><span class="tag tag--sus">SUS</span><span class="tag tag--plano">Planos de saúde</span></div>
-              <p class="addr">Rua da Esperança, 300 — Bancários, João Pessoa/PB</p>
+              <h2>Complexo Hospitalar de Mangabeira Governador Tarcísio de Miranda Burity</h2>
+              <div class="tags"><span class="tag tag--tipo">Hospital público</span><span class="tag tag--sus">SUS</span></div>
+              <p class="addr">R. Agente Fiscal José Costa Duarte, S/N - Mangabeira, João Pessoa - PB, 58056-384</p>
               <div class="detail-actions">
                 <a class="btn btn--primary btn--sm" target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/dir/?api=1&amp;destination=-7.1500,-34.8400">Como chegar (rota)</a>
                 <a class="btn btn--outline btn--sm" target="_blank" rel="noopener noreferrer" href="https://www.openstreetmap.org/?mlat=-7.1500&amp;mlon=-34.8400#map=17/-7.1500/-34.8400">Abrir mapa maior</a>
@@ -281,20 +291,17 @@
                 <section>
                   <h3>Horário de funcionamento</h3>
                   <ul class="hours">
-                    <li><span>Pronto atendimento</span><strong>24 horas</strong></li>
-                    <li><span>Consultas, seg. a sex.</span><strong>07:00 – 18:00</strong></li>
-                    <li><span>Consultas, sábado</span><strong>07:00 – 12:00</strong></li>
+                    <li><span>Urgência e Emergência</span><strong>24 horas</strong></li>
                   </ul>
                 </section>
                 <section>
                   <h3>Disponibilidade dos médicos</h3>
                   <div class="table-wrap"><table class="tbl">
-                    <thead><tr><th>Médico (exemplo)</th><th>Especialidade</th><th>Dias</th><th>Situação</th></tr></thead>
+                    <thead><tr><th>Médico </th><th>Especialidade</th><th>Dias</th><th>Situação</th></tr></thead>
                     <tbody>
-                      <tr><td>Dra. Olívia Exemplo</td><td>Clínica geral</td><td>Seg a sex</td><td><span class="tag tag--ok">Disponível</span></td></tr>
-                      <tr><td>Dr. Paulo Exemplo</td><td>Pediatria</td><td>Seg, qua, sex</td><td><span class="tag tag--ok">Disponível</span></td></tr>
-                      <tr><td>Dra. Quitéria Exemplo</td><td>Oftalmologia</td><td>Ter e qui</td><td><span class="tag tag--cheia">Agenda cheia hoje</span></td></tr>
-                      <tr><td>Dr. Rafael Exemplo</td><td>Dermatologia</td><td>Qua</td><td><span class="tag tag--sem">Sem atendimento hoje</span></td></tr>
+                      <tr><td>Dra. Olívia </td><td>Ortopedia e Traumatologia</td><td>24 horas</td><td><span class="tag tag--ok">Disponível</span></td></tr>
+                      <tr><td>Dr. Paulo </td><td>Anestesiologia</td><td>24 horas</td><td><span class="tag tag--ok">Disponível</span></td></tr>
+                      <tr><td>Dra. Quitéria </td><td>Tratamento da Dor e Reabilitação</td><td>24 horas</td><td><span class="tag tag--cheia">Agenda cheia hoje</span></td></tr>
                     </tbody>
                   </table></div>
                 </section>
