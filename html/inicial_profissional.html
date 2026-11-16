@@ -67,12 +67,9 @@
             <circle cx="12" cy="12" r="9" />
             <path d="M12 11v5M12 8h.01" />
           </svg></span>
-        <p>Demonstração: pacientes, horários e salas são fictícios. Nenhum dado real é exibido nem salvo. A integração
-          com o prontuário virá com o sistema da unidade.</p>
       </div>
 
-      <!-- ==================== AGENDA DO DIA ====================
-           Filtros por status e por atendimento funcionam só com CSS (:has + :checked). -->
+      <!-- ==================== AGENDA DO DIA ==================== -->
       <section class="agenda" id="agenda" aria-labelledby="t-agenda">
         <div class="agenda-head">
           <h2 id="t-agenda">Agenda do dia</h2>
@@ -106,7 +103,7 @@
               <details>
                 <summary>
                   <span class="hora">08:00</span>
-                  <span class="nome"><strong>Maria Exemplo</strong><small>54 anos · Clínica geral</small></span>
+                  <span class="nome"><strong>Maria</strong><small>54 anos · Clínica geral</small></span>
                   <span class="tags"><span class="tag tag--sus">SUS</span><span
                       class="tag tag--ok">Concluído</span></span>
                 </summary>
@@ -122,7 +119,7 @@
               <details>
                 <summary>
                   <span class="hora">08:30</span>
-                  <span class="nome"><strong>João Exemplo</strong><small>8 anos · Pediatria</small></span>
+                  <span class="nome"><strong>João</strong><small>8 anos · Pediatria</small></span>
                   <span class="tags"><span class="tag tag--sus">SUS</span><span
                       class="tag tag--ok">Concluído</span></span>
                 </summary>
@@ -138,7 +135,7 @@
               <details>
                 <summary>
                   <span class="hora">09:00</span>
-                  <span class="nome"><strong>Ana Exemplo</strong><small>31 anos · Clínica geral</small></span>
+                  <span class="nome"><strong>Ana</strong><small>31 anos · Clínica geral</small></span>
                   <span class="tags"><span class="tag tag--plano">Plano</span><span
                       class="tag tag--ok">Concluído</span></span>
                 </summary>
@@ -154,7 +151,7 @@
               <details open>
                 <summary>
                   <span class="hora">09:30</span>
-                  <span class="nome"><strong>Carlos Exemplo</strong><small>67 anos · Clínica geral</small></span>
+                  <span class="nome"><strong>Carlos</strong><small>67 anos · Clínica geral</small></span>
                   <span class="tags"><span class="tag tag--sus">SUS</span><span class="tag tag--now">Em
                       atendimento</span></span>
                 </summary>
@@ -170,7 +167,7 @@
               <details>
                 <summary>
                   <span class="hora">10:00</span>
-                  <span class="nome"><strong>Beatriz Exemplo</strong><small>42 anos · Clínica geral</small></span>
+                  <span class="nome"><strong>Beatriz</strong><small>42 anos · Clínica geral</small></span>
                   <span class="tags"><span class="tag tag--plano">Plano</span><span
                       class="tag tag--cheia">Aguardando</span></span>
                 </summary>
@@ -186,7 +183,7 @@
               <details>
                 <summary>
                   <span class="hora">10:30</span>
-                  <span class="nome"><strong>Pedro Exemplo</strong><small>5 anos · Pediatria</small></span>
+                  <span class="nome"><strong>Pedro</strong><small>5 anos · Pediatria</small></span>
                   <span class="tags"><span class="tag tag--sus">SUS</span><span
                       class="tag tag--cheia">Aguardando</span></span>
                 </summary>
@@ -202,7 +199,7 @@
               <details>
                 <summary>
                   <span class="hora">11:00</span>
-                  <span class="nome"><strong>Lúcia Exemplo</strong><small>73 anos · Clínica geral</small></span>
+                  <span class="nome"><strong>Lúcia</strong><small>73 anos · Clínica geral</small></span>
                   <span class="tags"><span class="tag tag--sus">SUS</span><span
                       class="tag tag--cheia">Aguardando</span></span>
                 </summary>
@@ -218,7 +215,7 @@
               <details>
                 <summary>
                   <span class="hora">11:30</span>
-                  <span class="nome"><strong>Rafael Exemplo</strong><small>29 anos · Clínica geral</small></span>
+                  <span class="nome"><strong>Rafael</strong><small>29 anos · Clínica geral</small></span>
                   <span class="tags"><span class="tag tag--plano">Plano</span><span
                       class="tag tag--cheia">Aguardando</span></span>
                 </summary>
@@ -232,7 +229,6 @@
 
           </ol>
 
-          <!-- depois da lista no HTML (o contador precisa disso); aparece acima pelo "order" -->
           <p class="contagem" aria-live="polite"></p>
         </div>
       </section>
@@ -245,11 +241,11 @@
           <dl class="resumo">
             <div>
               <dt>Unidade</dt>
-              <dd>UBS Central (exemplo)</dd>
+              <dd>Hospital de Emergência e Trauma Senador Humberto Lucena</dd>
             </div>
             <div>
               <dt>Endereço</dt>
-              <dd>Rua das Flores, 100 — Centro</dd>
+              <dd>R. Orestes Lisboa, SN - Pedro Gondim, João Pessoa - PB, 58031-090</dd>
             </div>
             <div>
               <dt>Sala</dt>
@@ -257,7 +253,7 @@
             </div>
             <div>
               <dt>Atendimento</dt>
-              <dd>SUS e planos</dd>
+              <dd>SUS</dd>
             </div>
           </dl>
           <div class="botoes">
@@ -281,22 +277,22 @@
               <tbody>
                 <tr>
                   <td>Segunda</td>
-                  <td>08:00 – 12:00</td>
+                  <td>05:00 – 22:00</td>
                   <td>Consultório 2</td>
                 </tr>
                 <tr>
                   <td>Terça</td>
-                  <td>08:00 – 12:00</td>
+                  <td>00:00 – 00:00</td>
                   <td>Consultório 2</td>
                 </tr>
                 <tr>
                   <td>Quarta</td>
-                  <td>14:00 – 17:00</td>
+                  <td>14:00 – 22:00</td>
                   <td>Consultório 2</td>
                 </tr>
                 <tr>
                   <td>Quinta</td>
-                  <td>08:00 – 12:00</td>
+                  <td>05:00 – 22:00</td>
                   <td>Sala 1</td>
                 </tr>
                 <tr>
