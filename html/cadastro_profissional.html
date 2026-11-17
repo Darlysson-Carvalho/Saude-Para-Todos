@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,7 +10,8 @@
   <!-- Fonte moderna (opcional: sem ela o navegador usa uma fonte do sistema) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap"
+    rel="stylesheet">
 
   <!-- CSS compartilhado + CSS exclusivo desta página -->
   <link rel="stylesheet" href="../css/base.css">
@@ -24,7 +26,11 @@
   <header class="site-header">
     <div class="container header-inner">
       <a class="brand" href="index.html" aria-label="Saúde para Todos — página inicial">
-        <span class="brand-icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1.1L12 21l7.8-7.5 1-1.1a5.5 5.5 0 0 0 0-7.8z"/><path d="M3.5 12h4l1.5-2.5 2.5 5 1.5-2.5h7"/></svg></span>
+        <span class="brand-icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24">
+            <path
+              d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1.1L12 21l7.8-7.5 1-1.1a5.5 5.5 0 0 0 0-7.8z" />
+            <path d="M3.5 12h4l1.5-2.5 2.5 5 1.5-2.5h7" />
+          </svg></span>
         <span>Saúde para Todos</span>
       </a>
       <div class="header-actions">
@@ -37,7 +43,11 @@
   <main id="conteudo" class="page-main">
     <div class="container">
       <section class="panel">
-        <div class="panel-icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M5 3v6a4 4 0 0 0 8 0V3"/><path d="M9 13v2a5 5 0 0 0 10 0v-1"/><circle cx="19" cy="12" r="2"/></svg></div>
+        <div class="panel-icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24">
+            <path d="M5 3v6a4 4 0 0 0 8 0V3" />
+            <path d="M9 13v2a5 5 0 0 0 10 0v-1" />
+            <circle cx="19" cy="12" r="2" />
+          </svg></div>
         <h1>Cadastro de profissional</h1>
         <p class="panel-sub">Preencha os dados abaixo para criar sua conta profissional.</p>
 
@@ -47,22 +57,60 @@
             <label for="nome">Nome completo</label>
             <input id="nome" name="nome" type="text" autocomplete="name" required>
           </div>
+
           <div class="field">
             <label for="email">E-mail</label>
-            <input id="email" name="email" type="email" autocomplete="email" placeholder="Ex: profissional@exemplo.com" required>
+            <input id="email" name="email" type="email" autocomplete="email" placeholder="Ex: profissional@exemplo.com"
+              required>
           </div>
+
           <div class="field">
             <label for="cpf">CPF</label>
             <input id="cpf" name="cpf" type="text" autocomplete="off" placeholder="Ex: 123.456.789-00" required>
           </div>
+
           <div class="field">
             <label for="registro">Registro profissional (CRM, COREN, CRF…)</label>
             <input id="registro" name="registro" type="text" autocomplete="off" placeholder="Ex: CRM 12345/PB" required>
           </div>
+
+          <div class="field">
+            <label for="funcao">Cargo / Profissão na área da saúde</label>
+            <select id="funcao" name="funcao" required>
+              <option value="" disabled selected>Selecione sua profissão</option>
+              <option value="medico">Médico(a)</option>
+              <option value="enfermeiro">Enfermeiro(a)</option>
+              <option value="tecnico_enfermagem">Técnico(a) de Enfermagem</option>
+              <option value="auxiliar_enfermagem">Auxiliar de Enfermagem</option>
+              <option value="dentista">Cirurgião-dentista</option>
+              <option value="farmaceutico">Farmacêutico(a)</option>
+              <option value="fisioterapeuta">Fisioterapeuta</option>
+              <option value="psicologo">Psicólogo(a)</option>
+              <option value="nutricionista">Nutricionista</option>
+              <option value="fonoaudiologo">Fonoaudiólogo(a)</option>
+              <option value="terapeuta_ocupacional">Terapeuta Ocupacional</option>
+              <option value="biomedico">Biomédico(a)</option>
+              <option value="assistente_social">Assistente Social</option>
+              <option value="tecnico_radiologia">Técnico(a) em Radiologia</option>
+              <option value="tecnico_laboratorio">Técnico(a) de Laboratório</option>
+              <option value="educador_fisico">Profissional de Educação Física</option>
+              <option value="veterinario">Médico(a) Veterinário(a)</option>
+              <option value="obstetriz">Obstetriz</option>
+              <option value="gestor_saude">Gestor(a) de Saúde</option>
+              <option value="outro">Outro profissional da saúde</option>
+            </select>
+          </div>
+          
+          <div class="field">
+            <label for="telefone">Telefone</label>
+            <input id="telefone" name="telefone" type="tel" autocomplete="tel" placeholder="(00) 00000-0000" required>
+          </div>
+
           <div class="field">
             <label for="senha">Senha</label>
             <input id="senha" type="password" autocomplete="new-password" minlength="8" required>
           </div>
+
           <button class="btn btn--primary btn--block" type="submit">Criar conta profissional</button>
         </form>
 
@@ -87,4 +135,5 @@
   </footer>
 
 </body>
+
 </html>
